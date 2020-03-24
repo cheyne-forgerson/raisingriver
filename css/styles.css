@@ -1,0 +1,192 @@
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px
+  overflow-x: hidden;
+}
+
+body {
+  font-family: mr-eaves-xl-modern, sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  color: #140700;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px
+  overflow-x: hidden;
+}
+
+h1 {
+  font-family: mr-eaves-xl-modern, sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.header-pad {
+  padding: 5%;
+}
+
+.fontstyle{
+  font-family: mr-eaves-xl-modern, sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 1.5rem;
+  color: #140700;
+}
+
+.titleCentered {
+  width: 100%;
+}
+
+.headingColor {
+  background-color: #B2775A;
+}
+
+.testH1 {
+  font-family: mr-eaves-xl-modern, sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.container-color {
+  background-color: #FAF8F7;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation Bar */
+.text-assign {
+  font-family: mr-eaves-xl-modern, sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 2rem;
+}
+
+/* Top Image */
+
+.img-wrapper {
+  position: relative;
+ }
+
+.img-responsive {
+  width: 100%;
+  height: auto;
+}
+
+.img-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.img-overlay:before {
+  content: ' ';
+  display: block;
+  /* adjust 'height' to position overlay content vertically */
+  height: 40%;
+}
+
+.no-margin {
+  width: 100%
+  margin: 0;
+  padding: 0;
+}
+
+.btn-style {
+  font-family: mr-eaves-xl-modern, sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* About Us */
+.about-us-h1 {
+  padding: 15% 0% 5% 0%;
+  font-size: 3rem;
+  text-decoration: underline;
+  color: #140700;
+}
+
+.about-us-img {
+  padding: 10% 5% 10% 5%;
+}
+
+.about-us-text {
+  padding: 10% 5% 10% 0%;
+  font-family: mr-eaves-xl-modern, sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 1.5rem;
+  text-align: left;
+  line-height: 1.5;
+  color: #140700;
+}
+
+/* Materials */
+.materials-heading {
+  padding: 15% 0% 5% 0%;
+  font-size: 3rem;
+  text-decoration: underline;
+  color: #140700;
+}
+
+.h1-pad {
+  padding: 5% 0% 5% 0%;
+  color: #140700;
+}
+
+.p-pad {
+  padding: 5% 10% 5% 10%;
+  font-family: mr-eaves-xl-modern, sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 1.5;
+  color: #140700;
+}
+
+/* Images */
+
+.top-image {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.image-pad {
+  padding: 5% 2% 5% 2%;
+}
+
+/* Footer */
+.footer-color {
+  background-color: #B2775A;
+  padding: 5% 0% 5% 0%;
+}
+
+.insta-icon {
+  color: #E4CDC7;
+}
+
+.insta-icon:hover {
+  color: #FAF8F7;
+}
+
+
+/* Colors */
+.colors {
+  color: #BFB1A8;
+  color: #E4CDC7;
+  color: #DDD2D2;
+  color: #FAF8F7;
+  color: #5A4D44;
+  color: #BFB1A8;
+  color: #B2775A;
+  color: #E6D9CC;
+  color: #140700;
+  }
