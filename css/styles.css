@@ -2,7 +2,7 @@ html {
   width: 100%;
   height: 100%;
   margin: 0px;
-  padding: 0px
+  padding: 0px;
   overflow-x: hidden;
 }
 
@@ -14,7 +14,7 @@ body {
   width: 100%;
   height: 100%;
   margin: 0px;
-  padding: 0px
+  padding: 0px;
   overflow-x: hidden;
 }
 
@@ -26,6 +26,13 @@ h1 {
 
 .header-pad {
   padding: 5%;
+}
+
+.collapse{
+  margin: 0px 0px 0px 200px;
+}
+.collapse li{
+  margin: 0px 30px;
 }
 
 .fontstyle{
@@ -93,7 +100,7 @@ h1 {
 }
 
 .no-margin {
-  width: 100%
+  width: 100%;
   margin: 0;
   padding: 0;
 }
