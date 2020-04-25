@@ -1,20 +1,13 @@
-window.onscroll = function() {revealHeader(), revealNav(), revealIconLR(), revealIconC()} ;
+window.onscroll = function() {revealNav(), revealIconLR(), revealIconC()} ;
 
-function revealHeader() {
-  if (document.body.scrollTop > (window.innerHeight)*0.05 || document.documentElement.scrollTop > (window.innerHeight)*0.05) {
+window.onload = setTimeout(function revealHeader() {
     document.getElementById("collection").className = "header-img";
     document.getElementById("doubleRs").className = "header-title-1-off";
     document.getElementById("raisingriver").className = "header-title-2-on";
-  }
-  else {
-    document.getElementById("collection").className = "header-img-off";
-    document.getElementById("doubleRs").className = "header-title-1-on";
-    document.getElementById("raisingriver").className = "header-title-2-off";
-  }
-}
+}, 1000);
 
 function revealNav() {
-  if (document.body.scrollTop > (window.innerHeight)*0.2 || document.documentElement.scrollTop > (window.innerHeight)*0.2) {
+  if (document.body.scrollTop > (window.innerHeight)*0.1 || document.documentElement.scrollTop > (window.innerHeight)*0.1) {
     document.getElementById("nav-btn").className = "nav-btn-on";
   }
   else {
