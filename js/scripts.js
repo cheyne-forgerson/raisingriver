@@ -1,6 +1,6 @@
 window.onscroll = function() {revealNav(), revealIconLR(), revealIconC()} ;
 
-window.onload = setTimeout(function revealHeader() {
+document.ready = setTimeout(function revealHeader() {
     document.getElementById("collection").className = "header-img";
     document.getElementById("doubleRs").className = "header-title-1-off";
     document.getElementById("raisingriver").className = "header-title-2-on";
