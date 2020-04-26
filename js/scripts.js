@@ -14,27 +14,6 @@ function revealNav() {
     document.getElementById("nav-btn").className = "nav-btn-off";
   }
 }
-//
-// function revealIconLR(){
-//   if (document.body.scrollTop > (window.innerHeight)*0.4 || document.documentElement.scrollTop > (window.innerHeight)*0.4) {
-//     document.getElementById("brand-imgL").className = "brand-imgL-on";
-//     document.getElementById("brand-imgR").className = "brand-imgR-on";
-//  }
-//  else {
-//    document.getElementById("brand-imgL").className = "brand-imgL-off";
-//    document.getElementById("brand-imgR").className = "brand-imgR-off";
-//  }
-// }
-//
-// function revealIconC(){
-//   if (document.body.scrollTop > (window.innerHeight)*0.6 || document.documentElement.scrollTop > (window.innerHeight)*0.6) {
-//   document.getElementById("brand-imgC").className = "brand-imgC-on";
-//  }
-//  else {
-//      document.getElementById("brand-imgC").className = "brand-imgC-off";
-//  }
-// }
-
 
 // Get the button, and when the user clicks on it, execute myFunction
 document.getElementById("nav-btn").onclick = function() {navBtnClick()};
@@ -87,5 +66,21 @@ window.addEventListener('scroll', function (brandImgRReveal) {
     brandImgR.className = "brand-imgR-on";
   } else {
     brandImgR.className = "brand-imgR-off";
+  }
+}, false);
+
+var shopLink = document.querySelector("#shop-link");
+var shopLinkText = document.querySelector("#shop-link-text");
+window.addEventListener('scroll', function (shopLinkReveal) {
+	if (isInViewport(shopLink) && isInViewport(shopLinkText)) {
+    shopLink.className = "shop-link-on";
+    setTimeout(function shopLinkTextHover() {
+      shopLinkText.className = "shop-link-text-hover";
+    }, 3000);
+    setTimeout(function shopLinkTextOn() {
+      shopLinkText.className = "shop-link-text";
+    }, 4000);
+  } else {
+    shopLink.className = "shop-link-off";
   }
 }, false);
