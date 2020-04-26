@@ -5,7 +5,7 @@ body {
   font-weight: 200;
   font-style: normal;
   background-color: #FAF8F7;
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
   overflow-y: scroll;
   overflox-x: hidden;
   scroll-behavior: smooth;
@@ -181,10 +181,6 @@ body:focus {
   display: fixed;
 }
 
-.header-snap {
-  scroll-snap-type: y mandatory;
-}
-
 .header {
   scroll-snap-align: start;
   width: 100%;
@@ -208,7 +204,6 @@ body:focus {
 }
 
 .header-img {
-  scroll-snap-align: start;
   grid-area: header;
   overflow: hidden;
   filter: none;
