@@ -407,27 +407,6 @@ body:focus {
   transition: 0.3s;
 }
 
-/* -----Canvas----- */
-
-.canvas-wrap{
-  width: 100vw;
-  height: 50vh;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  background: #DDD2D2;
-}
-#canvas {
-  background: none;
-  width: 100vw;
-  height: 50vh;
-  margin: 0;
-  padding: 0;
-  font-family: mr-eaves-xl-modern, sans-serif;
-  font-weight: 200;
-  font-style: normal;
-}
-
 /* Colors */
 .colors {
   color: #BFB1A8;
