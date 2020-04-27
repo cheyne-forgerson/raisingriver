@@ -8,12 +8,12 @@ window.onload = setTimeout(function revealTitle() {
 
 window.onload = setTimeout(function welcome() {
     document.getElementById("revealShop-h1-1").className = "revealShop-h1-1-on";
-}, 4500);
+}, 4000);
 
 window.onload = setTimeout(function stayAwhile() {
     document.getElementById("revealShop-h1-2").className = "revealShop-h1-2-on";
-}, 6500);
+}, 5500);
 
 window.onload = setTimeout(function revealShop() {
     document.getElementById("revealShop").className = "revealShop-on";
-}, 9000);
+}, 7500);

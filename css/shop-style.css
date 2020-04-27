@@ -35,7 +35,7 @@ body {
   border-bottom: 10px solid #FAF8F7;
   width: 0%;
   opacity: 0;
-  transition: 4000ms;
+  transition: 3000ms;
   z-index: 2;
 }
 
@@ -47,7 +47,7 @@ body {
   border-bottom: 10px solid #FAF8F7;
   width: 100%;
   opacity: 1;
-  transition: 4000ms;
+  transition: 3000ms;
   transition-delay: 1000ms;
   z-index: 2;
 }
@@ -111,7 +111,7 @@ body {
 
 .titleP-on {
   margin: 0%;
-  transition: ease 4000ms;
+  transition: ease 3000ms;
   grid-column: 5 / 6;
   grid-row: 2 / 3;
 }
@@ -159,7 +159,7 @@ main  {
   grid-template-rows: 15vh 20vh 10vh 20vh 20vh;
   background: #E4CDC7;
   z-index: 3;
-  transition: ease 3750ms;
+  transition: ease 3000ms;
   align-content: center;
   justify-content: center;
   overflow: hidden;
