@@ -10,14 +10,13 @@ body {
 .header {
   display: grid;
   grid-template-columns: 20vw 15vw 15vw 15vw 15vw 20vw;
-  grid-template-rows: 2vh 10vh 2vh;
+  grid-template-rows: 2vh 10vh 2vh 1vh;
   align-items: center;
   background-color: rgba(191, 177, 168, 0.7);
   z-index: 1;
   overflow-x: hidden;
   overflow-y: hidden;
   border-top: 2px solid #B2775A;
-  border-bottom: 2px solid #B2775A;
 }
 
 .header h1 {
@@ -137,8 +136,8 @@ main  {
 }
 
 .revealShop-off {
-  height: 80%;
-  width: 100%;
+  height: 85vh;
+  width: 100vw;
   grid-column: 1 / 6;
   grid-row: 1 / 8;
   display: grid;
@@ -151,8 +150,8 @@ main  {
 }
 
 .revealShop-on {
-  height: 0%;
-  width: 100%;
+  height: 0vh;
+  width: 100vw;
   grid-column: 1 / 6;
   grid-row: 1 / 8;
   display: grid;
