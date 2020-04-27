@@ -137,7 +137,7 @@ main  {
 }
 
 .revealShop-off {
-  height: 85vh;
+  height: 60vh;
   width: 100vw;
   grid-column: 1 / 6;
   grid-row: 1 / 8;
