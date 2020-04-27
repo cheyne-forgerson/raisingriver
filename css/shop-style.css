@@ -137,10 +137,10 @@ main  {
 }
 
 .revealShop-off {
-  height: 60vh;
+  height: 85vh;
   width: 100vw;
-  grid-column: 1 / 6;
-  grid-row: 1 / 8;
+  position: fixed;
+  bottom: 0;
   display: grid;
   grid-template-columns: 10vw 80vw 10vw;
   grid-template-rows: 15vh 20vh 10vh 20vh 20vh;
@@ -153,8 +153,8 @@ main  {
 .revealShop-on {
   height: 0vh;
   width: 100vw;
-  grid-column: 1 / 6;
-  grid-row: 1 / 8;
+  position: fixed;
+  bottom: 0;
   display: grid;
   grid-template-columns: 10vw 80vw 10vw;
   grid-template-rows: 15vh 20vh 10vh 20vh 20vh;
