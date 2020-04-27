@@ -17,6 +17,7 @@ body {
   overflow-x: hidden;
   overflow-y: hidden;
   border-top: 2px solid #B2775A;
+  border-bottom: 2px solid #B2775A;
 }
 
 .header h1 {
@@ -222,36 +223,89 @@ main img {
   border: 4px solid #DDD2D2;
 }
 
-.img1 {
+main p {
+  font-size: 4vw;
+  color: #140700;
+}
+
+.item1-off {
   display: block;
   width: 100%;
   text-align: center;
   grid-column: 2 / 3;
   grid-row: 2 / 3;
+  opacity: 0;
+  transition: 1000ms;
 }
 
-.img2 {
+.item1-on {
+  display: block;
+  width: 100%;
+  text-align: center;
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  opacity: 1;
+  transition: 1000ms;
+}
+
+.item2-off {
   display: block;
   width: 100%;
   text-align: center;
   grid-column: 4 / 5;
   grid-row: 2 / 3;
+  opacity: 0;
+  transition: 1000ms;
 }
 
-.img3 {
+.item2-on {
+  display: block;
+  width: 100%;
+  text-align: center;
+  grid-column: 4 / 5;
+  grid-row: 2 / 3;
+  opacity: 1;
+  transition: 1000ms;
+}
+
+.item3-off {
   display: block;
   width: 100%;
   text-align: center;
   grid-column: 2 / 3;
   grid-row: 4 / 5;
+  opacity: 0;
+  transition: 1000ms;
 }
 
-.img4 {
+.item3-on {
+  display: block;
+  width: 100%;
+  text-align: center;
+  grid-column: 2 / 3;
+  grid-row: 4 / 5;
+  opacity: 1;
+  transition: 1000ms;
+}
+
+.item4-off {
   display: block;
   width: 100%;
   text-align: center;
   grid-column: 4 / 5;
   grid-row: 4 / 5;
+  opacity: 0;
+  transition: 1000ms;
+}
+
+.item4-on {
+  display: block;
+  width: 100%;
+  text-align: center;
+  grid-column: 4 / 5;
+  grid-row: 4 / 5;
+  opacity: 1;
+  transition: 1000ms;
 }
 
 img {
