@@ -488,10 +488,10 @@ a {
   position: fixed;
   bottom: 0;
   width: 100vw;
-  height: 10vh;
+  height: 12vh;
   display: grid;
   grid-template-columns: 10vw 20vw 10vw 20vw 10vw 20vw 10vw;
-  grid-template-rows: 10vh;
+  grid-template-rows: 10vh 2vh;
   background-color: rgba(191, 177, 168, 1);
   border-top: 2px solid #B2775A;
   border-bottom: 2px solid #B2775A;
@@ -521,7 +521,7 @@ a {
   grid-row: 1;
   margin: 0vh 0vh 0vh 0vh;
   opacity: 1;
-  transition: ease 1500ms;
+  transition: ease 2000ms;
   width: 100%;
   height: 100%;
 }
@@ -536,7 +536,7 @@ a {
   margin: 0vh 0vh 20vh 0vh;
   transition: ease 1000ms;
   width: 100%;
-  height: 0%;
+  height: 100%;
 }
 
 .icon-ig-on {
