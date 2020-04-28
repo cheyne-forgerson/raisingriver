@@ -6,6 +6,7 @@ document.ready = setTimeout(function revealHeader() {
     document.getElementById("raisingriver").className = "header-title-2-on";
 }, 1000);
 
+//-------NAVIGATION-------
 function revealNav() {
   if (document.body.scrollTop > (window.innerHeight)*0.1 || document.documentElement.scrollTop > (window.innerHeight)*0.1) {
     document.getElementById("nav-btn").className = "nav-btn-on";
@@ -29,6 +30,7 @@ function navBtnClose() {
   document.getElementById("nav-items").className = "nav-items-off";
   document.getElementById("nav-btn").className = "nav-btn-on";
 }
+//-------END NAV-------
 
 // Is element in view
 var isInViewport = function (elem) {

@@ -4,19 +4,20 @@ window.onload = setTimeout(function revealTitle() {
     document.getElementById("titleO").className = "titleO-on";
     document.getElementById("titleP").className = "titleP-on";
     document.getElementById("titleUnderline").className = "titleUnderline-on";
-}, 500);
+}, 0);
 
 window.onload = setTimeout(function welcome() {
     document.getElementById("revealShop-h1-1").className = "revealShop-h1-1-on";
-}, 4000);
+}, 1500);
 
-window.onload = setTimeout(function stayAwhile() {
-    document.getElementById("revealShop-h1-2").className = "revealShop-h1-2-on";
-}, 5500);
+// window.onload = setTimeout(function stayAwhile() {
+//     document.getElementById("revealShop-h1-2").className = "revealShop-h1-2-on";
+// }, 3000);
 
 window.onload = setTimeout(function revealShop() {
     document.getElementById("revealShop").className = "revealShop-on";
-}, 7500);
+}, 3500);
+
 
 // IN VIEW PORT
 var isInViewport = function (elem) {
