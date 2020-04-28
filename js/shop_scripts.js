@@ -4,7 +4,10 @@ window.onload = setTimeout(function revealTitle() {
     document.getElementById("titleO").className = "titleO-on";
     document.getElementById("titleP").className = "titleP-on";
     document.getElementById("titleUnderline").className = "titleUnderline-on";
-}, 0);
+    document.getElementById("icon-home").className = "icon-home-on";
+    document.getElementById("icon-ig").className = "icon-ig-on";
+    document.getElementById("icon-bag").className = "icon-bag-on";
+}, 250);
 
 window.onload = setTimeout(function welcome() {
     document.getElementById("revealShop-h1-1").className = "revealShop-h1-1-on";
