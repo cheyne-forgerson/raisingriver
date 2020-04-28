@@ -498,7 +498,10 @@ a {
   z-index: 3;
   overflow: hidden;
   opacity: 1;
+}
 
+.navbar button {
+  text-decoration: none;
 }
 
 .icon-home-off {
