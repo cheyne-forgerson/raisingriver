@@ -33,6 +33,19 @@ var isInViewport = function (elem) {
     );
 };
 
+var addItemBtn = document.getElementsByClassName("addItemBtn");
+console.log(addItemBtn);
+var shoppingBagCount = document.getElementById("shoppingBagCount");
+var bagCount = 0;
+
+for (var i=0, len=addItemBtn.length|0; i<len; i=i+1|0) {
+  addItemBtn[i].onclick = function () {
+    bagCount += 1;
+    shoppingBagCount.innerHTML = bagCount;
+  }
+}
+
+//-------Reveal on Scroll-------
 /*
 var item1 = document.querySelector("#item1");
 window.addEventListener('scroll', function (item1Reveal) {
