@@ -5,7 +5,7 @@ window.onload = setTimeout(function revealTitle() {
     document.getElementById("titleP").className = "titleP-on";
     document.getElementById("titleUnderline").className = "titleUnderline-on";
     document.getElementById("icon-home").className = "icon-home-on";
-    document.getElementById("icon-ig").className = "icon-ig-on";
+    document.getElementById("nav-btn").className = "nav-btn-on";
     document.getElementById("icon-bag").className = "icon-bag-on";
 }, 250);
 
@@ -33,17 +33,43 @@ var isInViewport = function (elem) {
     );
 };
 
+/* -------ADD ITEM TO CART------- */
 var addItemBtn = document.getElementsByClassName("addItemBtn");
 console.log(addItemBtn);
 var shoppingBagCount = document.getElementById("shoppingBagCount");
-var bagCount = 0;
+var iconBagImg = document.getElementById("icon-bag-img");
+var itemCount = 0;
 
-for (var i=0, len=addItemBtn.length|0; i<len; i=i+1|0) {
-  addItemBtn[i].onclick = function () {
-    bagCount += 1;
-    shoppingBagCount.innerHTML = bagCount;
+for (let i = 0, len = addItemBtn.length | 0; i < len; i = i + 1 | 0) {
+  let addItemBtnCount = addItemBtn[i];
+  addItemBtnCount.onclick = function () {
+    itemCount += 1;
+    shoppingBagCount.innerHTML = itemCount;
+    iconBagImg.setAttribute("src", "images/icons/shopping-bag-solid2.svg");
+    addItemBtnCount.setAttribute("src", "images/icons/shopping-bag-solid.svg");
+    setTimeout(function removeBagClasses() {
+      addItemBtnCount.setAttribute("src", "images/icons/shopping-bag-solid2.svg");
+      iconBagImg.setAttribute("src", "images/icons/shopping-bag-solid.svg");
+    }, 500);
   }
 }
+
+//-------NAVIGATION-------
+document.getElementById("nav-btn").onclick = function() {navBtnClick()};
+
+function navBtnClick() {
+  document.getElementById("nav-items").className = "nav-items-on";
+  document.getElementById("nav-btn").className = "nav-btn-off";
+}
+
+document.getElementById("nav-close").onclick = function() {navBtnClose()};
+
+function navBtnClose() {
+  document.getElementById("nav-items").className = "nav-items-off";
+  document.getElementById("nav-btn").className = "nav-btn-on";
+}
+//-------END NAV-------
+
 
 //-------Reveal on Scroll-------
 /*

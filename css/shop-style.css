@@ -445,6 +445,10 @@ main p {
   z-index: 3;
 }
 
+.addItemBtn-click {
+  box-shadow: 5px 5px #BFB1A8;
+}
+
 /* -------ITEM 2------- */
 .item2-off {
   display: block;
@@ -626,7 +630,7 @@ a {
   height: 100%;
 }
 
-.icon-ig-off {
+.nav-btn-off {
   text-decoration: none;
   background-color: inherit;
   border: none;
@@ -639,7 +643,7 @@ a {
   height: 100%;
 }
 
-.icon-ig-on {
+.nav-btn-on {
   text-decoration: none;
   background-color: inherit;
   border: none;
@@ -676,6 +680,12 @@ a {
   height: 100%;
 }
 
+.icon-bag-click {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: 500ms;
+  background-color: #5A4D44;
+}
+
 .shoppingBagCount {
   text-decoration: none;
   background: none;
@@ -699,6 +709,117 @@ a {
   height: 60%;
   padding: 2vw;
 }
+
+/* -------Navigation------- */
+
+.nav-items-off {
+  background-color: rgba(179, 119, 90, 1);
+  display: grid;
+  grid-template-columns: 10vw 80vw 10vw;
+  grid-template-rows: 10vh 20vh 20vh 20vh 20vh 10vh;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 0vh;
+  transition: ease height 1000ms;
+  position: fixed;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  bottom: 0;
+  z-index: 3;
+}
+
+
+.nav-items-on {
+  background-color: rgba(179, 119, 90, 1);
+  display: grid;
+  grid-template-columns: 10vw 80vw 10vw;
+  grid-template-rows: 10vh 20vh 20vh 20vh 20vh 10vh;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  transition: ease height 1000ms;
+  position: fixed;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  bottom: 0;
+  z-index: 3;
+}
+
+.nav-item1 {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+
+}
+
+.nav-item2 {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+}
+
+
+.nav-item3 {
+  grid-column: 2 / 3;
+  grid-row: 4 / 5;
+}
+
+.nav-item4 {
+  grid-column: 2 / 3;
+  grid-row:5 / 6;
+}
+
+.nav-item {
+  text-align: center;
+}
+
+.nav-btn {
+  text-decoration: none;
+  background-color: inherit;
+  border: none;
+  color: #FAF8F7;
+  width: 100%;
+  height: 100%;
+  font-family: mr-eaves-xl-modern, sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 10vw;
+  padding: 5% 0% 5% 0%;
+  margin: 0;
+  transition: 1s;
+}
+
+.nav-btn:hover {
+  text-decoration: none;
+  color: #E6D9CC;
+  text-shadow: 2px 2px rgb(96, 91, 83);
+  transition: 1s;
+}
+
+.nav-close {
+  text-decoration: none;
+  background-color: inherit;
+  border: none;
+  color: #FAF8F7;
+  width: 100%;
+  height: 100%;
+  font-family: mr-eaves-xl-modern, sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 20vw;
+}
+
+.nav-close:hover {
+  text-decoration: none;
+  color: #E6D9CC;
+  text-shadow: 2px 2px rgb(96, 91, 83);
+  transition: 1s;
+}
+
+.nav-close:onclick {
+  text-shadow: 2px 20px 8px rgb(111, 103, 90);
+}
+
 
 /* Colors */
 .colors {
