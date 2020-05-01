@@ -40,6 +40,9 @@ var shoppingBagCount = document.getElementById("shoppingBagCount");
 var iconBagImg = document.getElementById("icon-bag-img");
 var itemCount = 0;
 
+var itemTitle = document.getElementsByClassName("item-title");
+console.log(itemTitle);
+
 for (let i = 0, len = addItemBtn.length | 0; i < len; i = i + 1 | 0) {
   let addItemBtnCount = addItemBtn[i];
   addItemBtnCount.onclick = function () {
@@ -47,11 +50,41 @@ for (let i = 0, len = addItemBtn.length | 0; i < len; i = i + 1 | 0) {
     shoppingBagCount.innerHTML = itemCount;
     iconBagImg.setAttribute("src", "images/icons/shopping-bag-solid2.svg");
     addItemBtnCount.setAttribute("src", "images/icons/shopping-bag-solid.svg");
+    addItemBtnCount.classList.add("addItemBtn-clicked");
     setTimeout(function removeBagClasses() {
       addItemBtnCount.setAttribute("src", "images/icons/shopping-bag-solid2.svg");
       iconBagImg.setAttribute("src", "images/icons/shopping-bag-solid.svg");
-    }, 500);
+      addItemBtnCount.classList.remove("addItemBtn-clicked");
+    }, 750);
+    let removeItem = document.createElement("LI");
+    removeItem.innerHTML = "x";
+    removeItem.className = "remove-item";
+    document.getElementById("shopping-bag-ul").appendChild(removeItem);
+    let itemInBag = document.createElement("LI");
+    let itemTitleText = itemTitle[i].textContent;
+    itemInBag.innerHTML = itemTitleText;
+    document.getElementById("shopping-bag-ul").appendChild(itemInBag);
+    let itemPrice = document.createElement("LI");
+    itemPrice.innerHTML = "$0";
+    document.getElementById("shopping-bag-ul").appendChild(itemPrice);
   }
+}
+
+//-------SHOPPING BAG ON--------
+shoppingBagCount.onclick = function () {displayShoppingBagOn()};
+
+function displayShoppingBagOn() {
+  document.getElementById("icon-bag").className = "icon-bag-off";
+  document.getElementById("display-shopping-bag").className = "display-shopping-bag-on";
+}
+
+//-------SHOPPING BAG OFF--------
+var shoppingBagClose = document.getElementById("close-shopping-bag");
+shoppingBagClose.onclick = function () {displayShoppingBagOff()};
+
+function displayShoppingBagOff() {
+  document.getElementById("icon-bag").className = "icon-bag-on";
+  document.getElementById("display-shopping-bag").className = "display-shopping-bag-off";
 }
 
 //-------NAVIGATION-------
