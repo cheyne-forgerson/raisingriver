@@ -63,9 +63,11 @@ for (let i = 0, len = addItemBtn.length | 0; i < len; i = i + 1 | 0) {
     let itemInBag = document.createElement("LI");
     let itemTitleText = itemTitle[i].textContent;
     itemInBag.innerHTML = itemTitleText;
+    itemInBag.className = "item-in-bag";
     document.getElementById("shopping-bag-ul").appendChild(itemInBag);
     let itemPrice = document.createElement("LI");
     itemPrice.innerHTML = "$0";
+    itemPrice.className = "item-price";
     document.getElementById("shopping-bag-ul").appendChild(itemPrice);
   }
 }
@@ -85,6 +87,21 @@ shoppingBagClose.onclick = function () {displayShoppingBagOff()};
 function displayShoppingBagOff() {
   document.getElementById("icon-bag").className = "icon-bag-on";
   document.getElementById("display-shopping-bag").className = "display-shopping-bag-off";
+}
+
+// -------REMOVE BAG ITEM-------
+var removeItemBtn = document.getElementsByClassName("remove-item");
+console.log(removeItemBtn);
+var removeItemInBag = document.getElementsByClassName("item-in-bag");
+console.log(removeItemInBag);
+var removePrice = document.getElementsByClassName("item-price");
+console.log(removePrice);
+
+for (let i = 0, len = removeItemBtn.length | 0; i < len; i = i + 1 | 0) {
+  removeItemBtn[i].onclick = function () {
+    removeItemInBag[i].remove();
+    removePrice[i].remove();
+  }
 }
 
 //-------NAVIGATION-------
