@@ -164,6 +164,24 @@ body:focus {
   box-shadow: 2px 2px 0.5px #888888;
 }
 
+.nav-btn-on-hover {
+  background-color: none;
+  border-radius: 1rem;
+  width: 20vw;
+  margin: 0 0 13.75vh 0;
+  float: center;
+  opacity: 8;
+  -webkit-transition: opacity 3s ease;
+  -moz-transition: opacity 3s ease;
+  -ms-transition: opacity 3s ease;
+  -o-transition: opacity 3s ease;
+  transition: 2000ms ease;
+  background-color: rgba(228, 206, 200, 0.6);
+  transition: background-color 0.5s ease;
+  transition: box-shadow 0.5s ease;
+  box-shadow: 2px 2px 0.5px #888888;
+}
+
 .nav-btn-img {
   width: 50%;
   float: center;
@@ -293,7 +311,7 @@ body:focus {
 
 /* -------Shop SS 20------- */
 
-/* Shop Content */
+/* -------BRAND ICONS------- */
 
 .shop-section {
   display: grid;
@@ -311,7 +329,7 @@ body:focus {
   width: 60%;
   height: auto;
   opacity: 0;
-  transition: opacity ease 1s;
+  transition: opacity ease 500ms;
   grid-column: 2 / 3;
   grid-row: 2 / 3;
 }
@@ -320,7 +338,7 @@ body:focus {
   width: 60%;
   height: auto;
   opacity: 1;
-  transition: opacity ease 4s;
+  transition: opacity ease 1000ms;
   grid-column: 2 / 3;
   grid-row: 2 / 3;
 }
@@ -329,7 +347,7 @@ body:focus {
   width: 80%;
   height: auto;
   opacity: 0;
-  transition: opacity ease 1s;
+  transition: opacity ease 500ms;
   grid-column: 3 / 4;
   grid-row: 2 / 3;
 }
@@ -338,7 +356,7 @@ body:focus {
   width: 80%;
   height: auto;
   opacity: 1;
-  transition: opacity ease 10s;
+  transition: opacity ease 2000ms;
   grid-column: 3 / 4;
   grid-row: 2 / 3;
 }
@@ -348,7 +366,7 @@ body:focus {
   height: auto;
   display: flex;
   opacity: 0;
-  transition: opacity ease 1s;
+  transition: opacity ease 500ms;
   grid-column: 4 / 5;
   grid-row: 2 / 3;
 }
@@ -357,7 +375,7 @@ body:focus {
   width: 60%;
   height: auto;
   opacity: 1;
-  transition: opacity ease 4s;
+  transition: opacity ease 1000ms;
   grid-column: 4 / 5;
   grid-row: 2 / 3;
 }
@@ -385,7 +403,7 @@ body:focus {
   justify-content: center;
   align-items: center;
   opacity: 1;
-  transition: ease 3000ms;
+  transition: ease 1000ms;
   width: 100%;
   height: 100%;
 }
@@ -403,7 +421,7 @@ body:focus {
   font-size: 10vw;
   padding: 5%;
   margin: 0;
-  transition: 2000ms;
+  transition: 1000ms;
 }
 
 .shop-link-text:visited {

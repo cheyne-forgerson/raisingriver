@@ -11,7 +11,7 @@ window.onload = setTimeout(function revealTitle() {
 
 window.onload = setTimeout(function welcome() {
     document.getElementById("revealShop-h1-1").className = "revealShop-h1-1-on";
-}, 1500);
+}, 500);
 
 // window.onload = setTimeout(function stayAwhile() {
 //     document.getElementById("revealShop-h1-2").className = "revealShop-h1-2-on";
@@ -19,7 +19,7 @@ window.onload = setTimeout(function welcome() {
 
 window.onload = setTimeout(function revealShop() {
     document.getElementById("revealShop").className = "revealShop-on";
-}, 3500);
+}, 2250);
 
 
 // IN VIEW PORT
@@ -43,19 +43,22 @@ var itemCount = 0;
 var itemTitle = document.getElementsByClassName("item-title");
 console.log(itemTitle);
 
+var itemPrice = document.getElementsByClassName("item-price");
+console.log(itemPrice);
+
 for (let i = 0, len = addItemBtn.length | 0; i < len; i = i + 1 | 0) {
   let addItemBtnCount = addItemBtn[i];
   addItemBtnCount.onclick = function () {
     itemCount += 1;
     shoppingBagCount.innerHTML = itemCount;
     iconBagImg.setAttribute("src", "images/icons/shopping-bag-solid2.svg");
-    addItemBtnCount.setAttribute("src", "images/icons/shopping-bag-solid.svg");
+    // addItemBtnCount.setAttribute("src", "images/icons/shopping-bag-solid.svg");
     addItemBtnCount.classList.add("addItemBtn-clicked");
     setTimeout(function removeBagClasses() {
       addItemBtnCount.setAttribute("src", "images/icons/shopping-bag-solid2.svg");
       iconBagImg.setAttribute("src", "images/icons/shopping-bag-solid.svg");
       addItemBtnCount.classList.remove("addItemBtn-clicked");
-    }, 750);
+    }, 500);
     let removeItem = document.createElement("LI");
     removeItem.innerHTML = "x";
     removeItem.className = "remove-item";
@@ -65,10 +68,11 @@ for (let i = 0, len = addItemBtn.length | 0; i < len; i = i + 1 | 0) {
     itemInBag.innerHTML = itemTitleText;
     itemInBag.className = "item-in-bag";
     document.getElementById("shopping-bag-ul").appendChild(itemInBag);
-    let itemPrice = document.createElement("LI");
-    itemPrice.innerHTML = "$0";
-    itemPrice.className = "item-price";
-    document.getElementById("shopping-bag-ul").appendChild(itemPrice);
+    let itemPriceCountText = itemPrice[i].textContent;
+    let itemPriceLI = document.createElement("LI");
+    itemPriceLI.innerHTML = itemPriceCountText;
+    itemPriceLI.className = "item-price-li";
+    document.getElementById("shopping-bag-ul").appendChild(itemPriceLI);
   }
 }
 
@@ -78,6 +82,7 @@ shoppingBagCount.onclick = function () {displayShoppingBagOn()};
 function displayShoppingBagOn() {
   document.getElementById("icon-bag").className = "icon-bag-off";
   document.getElementById("display-shopping-bag").className = "display-shopping-bag-on";
+  shoppingBagCount.classList.add("shoppingBagCount-off");
 }
 
 //-------SHOPPING BAG OFF--------
@@ -87,6 +92,27 @@ shoppingBagClose.onclick = function () {displayShoppingBagOff()};
 function displayShoppingBagOff() {
   document.getElementById("icon-bag").className = "icon-bag-on";
   document.getElementById("display-shopping-bag").className = "display-shopping-bag-off";
+  shoppingBagCount.classList.remove("shoppingBagCount-off");
+}
+
+// -------CLEAR SHOPPING BAG-------
+
+var clearBagBtn = document.querySelector("#shopping-bag-header-x");
+
+clearBagBtn.onclick = function () {clearShoppingBag()};
+
+function clearShoppingBag() {
+  let confirmClearBag = confirm("Remove all items from your shopping bag?");
+  if (confirmClearBag == true) {
+    let shoppingBag = document.getElementById("shopping-bag-ul");
+    while (shoppingBag.hasChildNodes()) {
+      shoppingBag.removeChild(shoppingBag.firstChild);
+    }
+    while (itemCount >= 1) {
+      itemCount -= 1;
+    }
+    shoppingBagCount.innerHTML = "";
+  }
 }
 
 // -------REMOVE BAG ITEM-------
@@ -94,7 +120,7 @@ var removeItemBtn = document.getElementsByClassName("remove-item");
 console.log(removeItemBtn);
 var removeItemInBag = document.getElementsByClassName("item-in-bag");
 console.log(removeItemInBag);
-var removePrice = document.getElementsByClassName("item-price");
+var removePrice = document.getElementsByClassName("item-price-li");
 console.log(removePrice);
 
 for (let i = 0, len = removeItemBtn.length | 0; i < len; i = i + 1 | 0) {
@@ -105,6 +131,13 @@ for (let i = 0, len = removeItemBtn.length | 0; i < len; i = i + 1 | 0) {
 }
 
 //-------NAVIGATION-------
+document.getElementById("icon-home").onclick = function () {homeBtnClick()};
+
+function homeBtnClick() {
+  document.getElementById("icon-home").className = "icon-home-off";
+  setTimeout(window.location.href = 'index.html', 5000);
+}
+
 document.getElementById("nav-btn").onclick = function() {navBtnClick()};
 
 function navBtnClick() {

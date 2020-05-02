@@ -43,45 +43,40 @@ var isInViewport = function (elem) {
     );
 };
 
-
 var brandImgL = document.querySelector("#brand-imgL");
-window.addEventListener('scroll', function (brandImgLReveal) {
-	if (isInViewport(brandImgL)) {
-    brandImgL.className = "brand-imgL-on";
-  } else {
-    brandImgL.className = "brand-imgL-off";
-  }
-}, false);
-
 var brandImgC = document.querySelector("#brand-imgC");
+var brandImgR = document.querySelector("#brand-imgR");
 window.addEventListener('scroll', function (brandImgCReveal) {
 	if (isInViewport(brandImgC)) {
+    brandImgL.className = "brand-imgL-on";
     brandImgC.className = "brand-imgC-on";
-  } else {
-    brandImgC.className = "brand-imgC-off";
-  }
-}, false);
-
-var brandImgR = document.querySelector("#brand-imgR");
-window.addEventListener('scroll', function (brandImgRReveal) {
-	if (isInViewport(brandImgR)) {
     brandImgR.className = "brand-imgR-on";
   } else {
+    brandImgL.className = "brand-imgL-off";
+    brandImgC.className = "brand-imgC-off";
     brandImgR.className = "brand-imgR-off";
   }
 }, false);
 
+
 var shopLink = document.querySelector("#shop-link");
 var shopLinkText = document.querySelector("#shop-link-text");
+var navBtn = document.getElementById("nav-btn");
 window.addEventListener('scroll', function (shopLinkReveal) {
 	if (isInViewport(shopLink) && isInViewport(shopLinkText)) {
     shopLink.className = "shop-link-on";
     setTimeout(function shopLinkTextHover() {
       shopLinkText.className = "shop-link-text-hover";
-    }, 3000);
+    }, 1000);
     setTimeout(function shopLinkTextOn() {
       shopLinkText.className = "shop-link-text";
-    }, 4000);
+    }, 1500);
+    setTimeout(function navBtnHover() {
+      navBtn.className = "nav-btn-on-hover";
+    }, 1500);
+    setTimeout(function navBtnOn() {
+      navBtn.className = "nav-btn-on";
+    }, 2000);
   } else {
     shopLink.className = "shop-link-off";
   }
