@@ -105,6 +105,7 @@ function clearShoppingBag() {
   let confirmClearBag = confirm("Remove all items from your shopping bag?");
   if (confirmClearBag == true) {
     let shoppingBag = document.getElementById("shopping-bag-ul");
+    
     while (shoppingBag.hasChildNodes()) {
       shoppingBag.removeChild(shoppingBag.firstChild);
     }
