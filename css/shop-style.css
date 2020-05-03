@@ -277,7 +277,7 @@ main p {
   transition: 1000ms;
   overflow-x: auto;
   overflow-y: hidden;
-  scroll-snap-type: x proximity;
+  scroll-snap-type: x mandatory;
 }
 
 #item1-swipe-arrow {
@@ -782,7 +782,7 @@ a {
     overflow-x: hidden;
     overflow-y: scroll;
     bottom: 0;
-    z-index: 3;
+    z-index: 5;
   }
 
 .display-shopping-bag-on {
@@ -801,7 +801,7 @@ a {
     overflow-x: hidden;
     overflow-y: scroll;
     bottom: 0;
-    z-index: 3;
+    z-index: 5;
   }
 
 #shopping-bag-header {
@@ -855,11 +855,22 @@ a {
   color: #5A4D44;
 }
 
-.close-shopping-bag {
+.shopping-bag-nav {
   grid-column: 1 / 4;
   grid-row: 5 / 6;
-  font-size: 15vw;
+  display: grid;
+  grid-template-columns: 30vw 30vw 30vw;
+  grid-template-rows: 10vh;
+  justify-items: center;
+}
+
+.close-shopping-bag {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
   color: #5A4D44;
+  font-size: 20vw;
+  height: 80%;
+  width: 80%;
 }
 
 .item-price-li {
