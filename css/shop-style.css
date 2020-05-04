@@ -129,7 +129,24 @@ body {
 main {
   display: grid;
   grid-template-columns: 8vw 36vw 11vw 36vw 8vw;
-  grid-template-rows: 5vh 25vh 5vh 8vh 8vh 25vh 5vh 8vh 8vh 25vh 5vh 8vh 8vh 25vh 5vh 8vh 8vh 15vh;
+  grid-template-rows:
+  /* Item 1 - Photo: 2 / 3, Arrow: 2 / 3 Title: 3 / 4, Button: 4 / 5 */
+  5vh 25vh 5vh 8vh
+  /* Item 2 - Photo: 6 / 7, Arrow: 6 / 7 Title: 7 / 8, Button: 8 / 9 */
+  8vh 25vh 5vh 8vh
+  /* Item 3 - Photo: 10 / 11, Arrow: 10 / 11 Title: 11 / 12, Button: 12 / 13 */
+  8vh 25vh 5vh 8vh
+  /* Item 4 */
+  8vh 25vh 5vh 8vh
+  /* Item 5 */
+  8vh 25vh 5vh 8vh
+  /* Item 6 */
+  8vh 25vh 5vh 8vh
+  /* Item 7 */
+  8vh 25vh 5vh 8vh
+  /* Item 8 */
+  8vh 25vh 5vh 8vh
+  8vh 15vh;
   width: 100vw;
   height: auto;
   top: 14vh;
@@ -319,7 +336,6 @@ main p {
   color: #5A4D44
 }
 
-
 /* -------ITEM 2------- */
 .item2-off {
   display: block;
@@ -333,14 +349,23 @@ main p {
 }
 
 .item2-on {
-  display: block;
+  border: 2px solid #DDD2D2;
+  display: flex;
+  justify-content: start;
   width: 100%;
   height: 100%;
-  text-align: center;
   grid-column: 2 / 5;
   grid-row: 6 / 7;
   opacity: 1;
   transition: 1000ms;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+}
+
+#item2-swipe-arrow {
+  grid-column: 2 / 5;
+  grid-row: 6 / 7;
 }
 
 #item2-title {
@@ -351,12 +376,7 @@ main p {
   grid-row: 7 / 8;
 }
 
-#addItemBtn2 {
-  width: 130%;
-  height: 130%;
-  display: flex;
-  align-self: center;
-  justify-content: center;
+#addItemBtn2-img {
   grid-column: 3 / 4;
   grid-row: 8 / 9;
   opacity: 0.7;
@@ -365,18 +385,20 @@ main p {
 }
 
 #item2-price {
-  width: 130%;
-  height: 130%;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-self: center;
   justify-content: center;
+  text-align: center;
   grid-column: 3 / 4;
   grid-row: 8 / 9;
   opacity: 1;
   transition: 1000ms;
   z-index: 2;
   font-size: 5vw;
-  margin-top: 10vw;
+  margin-top: 8vh;
+  color: #5A4D44
 }
 
 /* -------ITEM 3------- */
@@ -392,14 +414,23 @@ main p {
 }
 
 .item3-on {
-  display: block;
+  border: 2px solid #DDD2D2;
+  display: flex;
+  justify-content: start;
   width: 100%;
   height: 100%;
-  text-align: center;
   grid-column: 2 / 5;
   grid-row: 10 / 11;
   opacity: 1;
   transition: 1000ms;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+}
+
+#item3-swipe-arrow {
+  grid-column: 2 / 5;
+  grid-row: 10 / 11;
 }
 
 #item3-title {
@@ -410,12 +441,7 @@ main p {
   grid-row: 11 / 12;
 }
 
-#addItemBtn3 {
-  width: 130%;
-  height: 130%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+#addItemBtn3-img {
   grid-column: 3 / 4;
   grid-row: 12 / 13;
   opacity: 0.7;
@@ -424,18 +450,20 @@ main p {
 }
 
 #item3-price {
-  width: 130%;
-  height: 130%;
+  width: 100%;
+  height: 100%;
   display: flex;
-  align-items: center;
+  align-self: center;
   justify-content: center;
+  text-align: center;
   grid-column: 3 / 4;
   grid-row: 12 / 13;
   opacity: 1;
   transition: 1000ms;
   z-index: 2;
   font-size: 5vw;
-  margin-top: 5vh;
+  margin-top: 8vh;
+  color: #5A4D44
 }
 
 /* -------ITEM 4------- */
@@ -451,14 +479,23 @@ main p {
 }
 
 .item4-on {
-  display: block;
+  border: 2px solid #DDD2D2;
+  display: flex;
+  justify-content: start;
   width: 100%;
   height: 100%;
-  text-align: center;
   grid-column: 2 / 5;
   grid-row: 14 / 15;
   opacity: 1;
   transition: 1000ms;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+}
+
+#item4-swipe-arrow {
+  grid-column: 2 / 5;
+  grid-row: 14 / 15;
 }
 
 #item4-title {
@@ -469,12 +506,7 @@ main p {
   grid-row: 15 / 16;
 }
 
-#addItemBtn4 {
-  width: 130%;
-  height: 130%;
-  display: flex;
-  align-self: center;
-  justify-content: center;
+#addItemBtn4-img {
   grid-column: 3 / 4;
   grid-row: 16 / 17;
   opacity: 0.7;
@@ -483,18 +515,20 @@ main p {
 }
 
 #item4-price {
-  width: 130%;
-  height: 130%;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-self: center;
   justify-content: center;
+  text-align: center;
   grid-column: 3 / 4;
   grid-row: 16 / 17;
   opacity: 1;
   transition: 1000ms;
   z-index: 2;
   font-size: 5vw;
-  margin-top: 7.5vh;
+  margin-top: 8vh;
+  color: #5A4D44
 }
 
 
@@ -511,7 +545,6 @@ a {
   align-self: center;
   align-items: center;
   justify-content: center;
-  border: 2px solid #b88759;
   background-color: none;
   color: #E4CDC7;
   padding: 8%;
@@ -522,7 +555,6 @@ a {
 
 .addItemBtn-clicked {
   background-color: #BFB1A8;
-  border: 2px solid #BFB1A8;
   transition: ease 750ms;
   color: #FAF8F7;
 }
