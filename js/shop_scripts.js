@@ -60,8 +60,7 @@ for (let i = 0, len = addItemBtn.length | 0; i < len; i = i + 1 | 0) {
       addItemBtnCount.classList.remove("addItemBtn-clicked");
     }, 500);
     let removeItem = document.createElement("LI");
-    removeItem.innerHTML = "x";
-    removeItem.className = "remove-item";
+    removeItem.className = "shopping-bag-x fal fa-times";
     document.getElementById("shopping-bag-ul").appendChild(removeItem);
     let itemInBag = document.createElement("LI");
     let itemTitleText = itemTitle[i].textContent;
@@ -73,6 +72,8 @@ for (let i = 0, len = addItemBtn.length | 0; i < len; i = i + 1 | 0) {
     itemPriceLI.innerHTML = itemPriceCountText;
     itemPriceLI.className = "item-price-li";
     document.getElementById("shopping-bag-ul").appendChild(itemPriceLI);
+    let shoppingBagEmpty = document.getElementById("shopping-bag-empty");
+    document.getElementById("shopping-bag-ul").removeChild(shoppingBagEmpty);
   }
 }
 
@@ -105,7 +106,7 @@ function clearShoppingBag() {
   let confirmClearBag = confirm("Remove all items from your shopping bag?");
   if (confirmClearBag == true) {
     let shoppingBag = document.getElementById("shopping-bag-ul");
-    
+
     while (shoppingBag.hasChildNodes()) {
       shoppingBag.removeChild(shoppingBag.firstChild);
     }
@@ -113,6 +114,10 @@ function clearShoppingBag() {
       itemCount -= 1;
     }
     shoppingBagCount.innerHTML = "";
+    let shoppingBagEmpty = document.createElement("li");
+    shoppingBagEmpty.id = "shopping-bag-empty";
+    shoppingBagEmpty.innerHTML = "your shopping bag is empty.";
+    document.getElementById("shopping-bag-ul").appendChild(shoppingBagEmpty);
   }
 }
 

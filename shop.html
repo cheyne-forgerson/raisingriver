@@ -10,8 +10,13 @@
     <!-- Mr Eaves XL Mod OT Light -->
     <link rel="stylesheet" href="https://use.typekit.net/vly5buk.css">
 
+    <meta name="viewport" content="width=device-width">
     <meta charset="utf-8">
-    <title></title>
+    <title>raising river | shop</title>
+
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/80a57152a6.js" crossorigin="anonymous"></script>
+
   </head>
   <body>
 
@@ -39,9 +44,13 @@
         <img class="product-img" src="images/products/amelia-almond_ear.jpg" alt="">
         <img class="product-img" src="images/products/amelia-almond_field.jpg" alt="">
       </div>
-      <img id="item1-swipe-arrow" class="swipe-arrow" src="images/icons/arrows-alt-h-solid.svg" alt="">
+      <div id="item1-swipe-arrow" class="swipe-arrow">
+        <i class="fal fa-arrows-h"></i>
+      </div>
       <p id="item1-title" class="item-title">amelia || almond</p>
-      <img id="addItemBtn1-img" class="addItemBtn" src="images/icons/shopping-bag-solid2.svg" alt="">
+      <span id="addItemBtn1-img" class="addItemBtn">
+        <i class="fal fa-shopping-bag med"></i>
+      </span>
       <p id="item1-price" class="item-price">$28</p>
     <!-- Item 2 -->
       <div id="item2" class="item2-on">
@@ -103,20 +112,28 @@
       </div>
     </div>
 
+    <!-- Shopping Bag -->
     <div id="display-shopping-bag" class="display-shopping-bag-off">
       <h1 class="shopping-bag-title">shopping bag</h1>
       <ul id="shopping-bag-header">
-        <li id="shopping-bag-header-x">x</li>
-        <li id="shopping-bag-header-item">item</li>
-        <li id="shopping-bag-header-price">price</li>
+        <li id="shopping-bag-header-x">
+          <i class="fal fa-times"></i>
+        </li>
+        <li id="shopping-bag-header-item">
+          <h1>item</h1>
+        </li>
+        <li id="shopping-bag-header-price">
+          <h1>price</h1>
+        </li>
       </ul>
       <ul id="shopping-bag-ul" class="shopping-bag-ul">
-
+        <li id="shopping-bag-empty">your shopping bag is empty.</li>
       </ul>
       <div class="shopping-bag-nav">
-        <h1 id="close-shopping-bag" class="close-shopping-bag">x</h1>
+        <div id="close-shopping-bag" class="close-shopping-bag">
+          <i class="fal fa-times"></i>
+        </div>
       </div>
-
     </div>
 
 
