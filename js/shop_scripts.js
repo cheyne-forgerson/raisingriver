@@ -36,8 +36,8 @@ var isInViewport = function (elem) {
 /* -------ADD ITEM TO CART------- */
 var addItemBtn = document.getElementsByClassName("addItemBtn");
 console.log(addItemBtn);
+
 var shoppingBagCount = document.getElementById("shoppingBagCount");
-var iconBagImg = document.getElementById("icon-bag-img");
 var itemCount = 0;
 
 var itemTitle = document.getElementsByClassName("item-title");
@@ -51,12 +51,10 @@ for (let i = 0, len = addItemBtn.length | 0; i < len; i = i + 1 | 0) {
   addItemBtnCount.onclick = function () {
     itemCount += 1;
     shoppingBagCount.innerHTML = itemCount;
-    iconBagImg.setAttribute("src", "images/icons/shopping-bag-solid2.svg");
     // addItemBtnCount.setAttribute("src", "images/icons/shopping-bag-solid.svg");
     addItemBtnCount.classList.add("addItemBtn-clicked");
     setTimeout(function removeBagClasses() {
       addItemBtnCount.setAttribute("src", "images/icons/shopping-bag-solid2.svg");
-      iconBagImg.setAttribute("src", "images/icons/shopping-bag-solid.svg");
       addItemBtnCount.classList.remove("addItemBtn-clicked");
     }, 500);
     let removeItem = document.createElement("LI");
