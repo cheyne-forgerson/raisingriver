@@ -7,6 +7,7 @@ window.onload = setTimeout(function revealTitle() {
     document.getElementById("icon-home").className = "icon-home-on";
     document.getElementById("nav-btn").className = "nav-btn-on";
     document.getElementById("icon-bag").className = "icon-bag-on";
+    document.getElementById("shoppingBagCount").className = "shoppingBagCount-on";
 }, 250);
 
 window.onload = setTimeout(function welcome() {
@@ -46,17 +47,17 @@ console.log(itemTitle);
 var itemPrice = document.getElementsByClassName("item-price");
 console.log(itemPrice);
 
+var shoppingBagIcon = document.getElementsByClassName("shopping-bag-icon-btn");
+console.log(shoppingBagIcon);
+
 for (let i = 0, len = addItemBtn.length | 0; i < len; i = i + 1 | 0) {
   let addItemBtnCount = addItemBtn[i];
   addItemBtnCount.onclick = function () {
     itemCount += 1;
     shoppingBagCount.innerHTML = itemCount;
-    // addItemBtnCount.setAttribute("src", "images/icons/shopping-bag-solid.svg");
-    addItemBtnCount.classList.add("addItemBtn-clicked");
-    setTimeout(function removeBagClasses() {
-      addItemBtnCount.setAttribute("src", "images/icons/shopping-bag-solid2.svg");
-      addItemBtnCount.classList.remove("addItemBtn-clicked");
-    }, 500);
+    shoppingBagIcon[i].setAttribute("src", "images/icons/shopping-bag-duotone-dark.svg");
+    let shoppingBagIconDark = shoppingBagIcon[i].setAttribute("src", "images/icons/shopping-bag-light.svg");
+    setTimeout(shoppingBagIconDark, 1000);
     let removeItem = document.createElement("LI");
     removeItem.className = "shopping-bag-x fal fa-times";
     document.getElementById("shopping-bag-ul").appendChild(removeItem);
@@ -76,12 +77,20 @@ for (let i = 0, len = addItemBtn.length | 0; i < len; i = i + 1 | 0) {
 }
 
 //-------SHOPPING BAG ON--------
-shoppingBagCount.onclick = function () {displayShoppingBagOn()};
+shoppingBagCount.onclick = function () {displayShoppingBagOnOff()};
+var navBag = document.getElementById("nav-bag");
 
-function displayShoppingBagOn() {
-  document.getElementById("icon-bag").className = "icon-bag-off";
-  document.getElementById("display-shopping-bag").className = "display-shopping-bag-on";
-  shoppingBagCount.classList.add("shoppingBagCount-off");
+function displayShoppingBagOnOff() {
+  if (navBag.className == "nav-bag-light") {
+    document.getElementById("display-shopping-bag").className = "display-shopping-bag-on";
+    navBag.setAttribute("src", "images/icons/shopping-bag-duotone.svg");
+    navBag.className = "nav-bag-duotone";
+  }
+  else {
+    document.getElementById("display-shopping-bag").className = "display-shopping-bag-off";
+    navBag.className = "nav-bag-light";
+    navBag.setAttribute("src", "images/icons/shopping-bag-light-wht.svg");
+  }
 }
 
 //-------SHOPPING BAG OFF--------
@@ -91,7 +100,7 @@ shoppingBagClose.onclick = function () {displayShoppingBagOff()};
 function displayShoppingBagOff() {
   document.getElementById("icon-bag").className = "icon-bag-on";
   document.getElementById("display-shopping-bag").className = "display-shopping-bag-off";
-  shoppingBagCount.classList.remove("shoppingBagCount-off");
+  setTimeout(shoppingBagCount.className = "shoppingBagCount-on", 1500);
 }
 
 // -------CLEAR SHOPPING BAG-------
@@ -142,19 +151,21 @@ function homeBtnClick() {
   setTimeout(window.location.href = 'index.html', 5000);
 }
 
-document.getElementById("nav-btn").onclick = function() {navBtnClick()};
+var navBtn = document.getElementById("nav-btn");
+
+navBtn.onclick = function() {navBtnClick()};
 
 function navBtnClick() {
-  document.getElementById("nav-items").className = "nav-items-on";
-  document.getElementById("nav-btn").className = "nav-btn-off";
+  if (navBtn.className == "nav-btn-on") {
+    document.getElementById("nav-items").className = "nav-items-on";
+    navBtn.className = "nav-btn-rotate";
+  }
+  else {
+    document.getElementById("nav-items").className = "nav-items-off";
+    navBtn.className = "nav-btn-on";
+  }
 }
 
-document.getElementById("nav-close").onclick = function() {navBtnClose()};
-
-function navBtnClose() {
-  document.getElementById("nav-items").className = "nav-items-off";
-  document.getElementById("nav-btn").className = "nav-btn-on";
-}
 //-------END NAV-------
 
 

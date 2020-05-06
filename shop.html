@@ -49,7 +49,7 @@
       </div>
       <p id="item1-title" class="item-title">amelia || almond</p>
       <span id="addItemBtn1-img" class="addItemBtn">
-        <i class="fal fa-shopping-bag med"></i>
+        <img class="shopping-bag-icon-btn" src="images/icons/shopping-bag-light.svg" alt="">
       </span>
       <p id="item1-price" class="item-price">$28</p>
     <!-- Item 2 -->
@@ -63,7 +63,7 @@
     </div>
     <p id="item2-title" class="item-title">amelia || almond</p>
     <span id="addItemBtn2-img" class="addItemBtn">
-      <i class="fal fa-shopping-bag med"></i>
+      <img class="shopping-bag-icon-btn" src="images/icons/shopping-bag-light.svg" alt="">
     </span>
     <p id="item2-price" class="item-price">$28</p>
     <!-- Item 3 -->
@@ -77,7 +77,7 @@
     </div>
     <p id="item3-title" class="item-title">amelia || almond</p>
     <span id="addItemBtn3-img" class="addItemBtn">
-      <i class="fal fa-shopping-bag med"></i>
+      <img class="shopping-bag-icon-btn" src="images/icons/shopping-bag-light.svg" alt="">
     </span>
     <p id="item3-price" class="item-price">$28</p>
     <!-- Item 4 -->
@@ -91,7 +91,7 @@
     </div>
     <p id="item4-title" class="item-title">amelia || almond</p>
     <span id="addItemBtn4-img" class="addItemBtn">
-      <i class="fal fa-shopping-bag med"></i>
+      <img class="shopping-bag-icon-btn" src="images/icons/shopping-bag-light.svg" alt="">
     </span>
     <p id="item4-price" class="item-price">$28</p>
     <!-- Item 5 -->
@@ -150,22 +150,24 @@
       <i class="fal fa-shopping-bag med"></i>
     </span>
     <p id="item8-price" class="item-price">$28</p> -->
+
   <!-- NAVIGATION -->
+
+  <!-- Toolbar -->
     <div class="navbar">
       <button id="icon-home" class="icon-home-off" type="button" name="button">
-        <img src="images/icons/home-solid.svg" alt="">
+        <img id="home-icon" src="images/icons/home-light.svg" alt="">
       </button>
       <button id="nav-btn" class="nav-btn-off" type="button" name="button">
-        <img src="images/doubleRsOffWht.png" alt="">
+        <img id="bars-icon" src="images/icons/bars-light.svg" alt="">
       </button>
       <button id="icon-bag" class="icon-bag-off" type="button" name="button">
-        <span  class="addItemBtn">
-          <i class="fal fa-shopping-bag med"></i>
-        </span>
+        <img id="nav-bag" class="nav-bag-light" src="images/icons/shopping-bag-light-wht.svg" alt="">
       </button>
-      <h1 id="shoppingBagCount" class="shoppingBagCount-on"></h1>
+      <p id="shoppingBagCount" class="shoppingBagCount-off"></p>
     </div>
 
+    <!-- Hamburger -->
     <div id="nav-items" class="nav-items-off">
       <div class="nav-item1">
         <button class="nav-btn" type="button" name="button" onclick="window.location.href = 'index.html';">
@@ -180,11 +182,6 @@
       <div class="nav-item3">
         <button class="nav-btn" type="button" name="button" onclick="window.location.href = 'index.html';">
           collections
-        </button>
-      </div>
-      <div class="nav-item4">
-        <button id="nav-close" class="nav-close" type="button" name="button">
-          &times;
         </button>
       </div>
     </div>
@@ -207,9 +204,9 @@
         <li id="shopping-bag-empty">your shopping bag is empty.</li>
       </ul>
       <div class="shopping-bag-nav">
-        <div id="close-shopping-bag" class="close-shopping-bag">
-          <i class="fal fa-times"></i>
-        </div>
+        <button id="close-shopping-bag" class="close-shopping-bag">
+          checkout
+        </button>
       </div>
     </div>
 
