@@ -10,7 +10,8 @@
     <!-- Mr Eaves XL Mod OT Light -->
     <link rel="stylesheet" href="https://use.typekit.net/vly5buk.css">
 
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width,height=device-height initial-scale=1">
+    <!-- <meta name="viewport" content="width=device-width"> -->
     <meta charset="utf-8">
     <title>raising river | shop</title>
 
@@ -20,6 +21,15 @@
   </head>
   <body>
 
+    <div id="content-wrapper-landscape" class="show">
+      <div class="landscape-container">
+        <img class="product-img" src="images/products/amelia_almond_product.jpg" alt="">
+        <img class="product-img" src="images/products/amelia-almond_ear.jpg" alt="">
+        <img class="product-img" src="images/products/amelia-almond_field.jpg" alt="">
+      </div>
+    </div>
+
+    <div id="content-wrapper-portrait" class="hidden">
     <div class="header">
       <div class="placeholderL"></div>
       <h1 id="titleS" class="titleS-off">s</h1>
@@ -48,52 +58,44 @@
         <i class="fal fa-arrows-h"></i>
       </div>
       <p id="item1-title" class="item-title">amelia || almond</p>
-      <span id="addItemBtn1-img" class="addItemBtn">
-        <img class="shopping-bag-icon-btn" src="images/icons/shopping-bag-light.svg" alt="">
-      </span>
+      <img id="addItemBtn1-img" class="addItemBtn" src="images/icons/shopping-bag-light.svg" alt="">
       <p id="item1-price" class="item-price">$28</p>
     <!-- Item 2 -->
     <div id="item2" class="item2-on">
-      <img class="product-img" src="images/products/amelia_almond_product.jpg" alt="">
-      <img class="product-img" src="images/products/amelia-almond_ear.jpg" alt="">
-      <img class="product-img" src="images/products/amelia-almond_field.jpg" alt="">
+      <img class="product-img" src="images/products/amelia_seafoam_01.jpg" alt="">
+      <img class="product-img" src="images/products/amelia_seafoam_02.jpg" alt="">
     </div>
     <div id="item2-swipe-arrow" class="swipe-arrow">
       <i class="fal fa-arrows-h"></i>
     </div>
-    <p id="item2-title" class="item-title">amelia || almond</p>
-    <span id="addItemBtn2-img" class="addItemBtn">
-      <img class="shopping-bag-icon-btn" src="images/icons/shopping-bag-light.svg" alt="">
-    </span>
+    <p id="item2-title" class="item-title">amelia || sea foam</p>
+    <img id="addItemBtn2-img" class="addItemBtn" src="images/icons/shopping-bag-light.svg" alt="">
     <p id="item2-price" class="item-price">$28</p>
     <!-- Item 3 -->
     <div id="item3" class="item3-on">
-      <img class="product-img" src="images/products/amelia_almond_product.jpg" alt="">
-      <img class="product-img" src="images/products/amelia-almond_ear.jpg" alt="">
-      <img class="product-img" src="images/products/amelia-almond_field.jpg" alt="">
+      <img class="product-img" src="images/products/arch_succulent.jpg" alt="">
+      <!-- <img class="product-img" src="images/products/amelia-almond_ear.jpg" alt="">
+      <img class="product-img" src="images/products/amelia-almond_field.jpg" alt=""> -->
     </div>
     <div id="item3-swipe-arrow" class="swipe-arrow">
       <i class="fal fa-arrows-h"></i>
     </div>
-    <p id="item3-title" class="item-title">amelia || almond</p>
-    <span id="addItemBtn3-img" class="addItemBtn">
-      <img class="shopping-bag-icon-btn" src="images/icons/shopping-bag-light.svg" alt="">
-    </span>
-    <p id="item3-price" class="item-price">$28</p>
+    <p id="item3-title" class="item-title">arch || succulent</p>
+    <img id="addItemBtn3-img" class="addItemBtn" src="images/icons/shopping-bag-light.svg" alt="">
+    <p id="item3-price" class="item-price">$30</p>
     <!-- Item 4 -->
     <div id="item4" class="item4-on">
-      <img class="product-img" src="images/products/amelia_almond_product.jpg" alt="">
-      <img class="product-img" src="images/products/amelia-almond_ear.jpg" alt="">
-      <img class="product-img" src="images/products/amelia-almond_field.jpg" alt="">
+      <img class="product-img" src="images/products/ever_almond_01.jpg" alt="">
+      <img class="product-img" src="images/products/ever_almond_02.jpg" alt="">
+      <img class="product-img" src="images/products/ever_almond_03.jpg" alt="">
+      <img class="product-img" src="images/products/ever_almond_04.jpg" alt="">
     </div>
     <div id="item4-swipe-arrow" class="swipe-arrow">
       <i class="fal fa-arrows-h"></i>
     </div>
-    <p id="item4-title" class="item-title">amelia || almond</p>
-    <span id="addItemBtn4-img" class="addItemBtn">
-      <img class="shopping-bag-icon-btn" src="images/icons/shopping-bag-light.svg" alt="">
-    </span>
-    <p id="item4-price" class="item-price">$28</p>
+    <p id="item4-title" class="item-title">ever || almond</p>
+    <img id="addItemBtn4-img" class="addItemBtn"src="images/icons/shopping-bag-light.svg" alt="">
+    <p id="item4-price" class="item-price">$32</p>
     <!-- Item 5 -->
     <!-- <div id="item5" class="item5-on">
       <img class="product-img" src="images/products/amelia_almond_product.jpg" alt="">
@@ -159,7 +161,7 @@
         <img id="home-icon" src="images/icons/home-light.svg" alt="">
       </button>
       <button id="nav-btn" class="nav-btn-off" type="button" name="button">
-        <img id="bars-icon" src="images/icons/bars-light.svg" alt="">
+        <img id="bars-icon" class="bars-icon-on" src="images/icons/bars-light.svg" alt="">
       </button>
       <button id="icon-bag" class="icon-bag-off" type="button" name="button">
         <img id="nav-bag" class="nav-bag-light" src="images/icons/shopping-bag-light-wht.svg" alt="">
@@ -209,7 +211,7 @@
         </button>
       </div>
     </div>
-
+  </div>
 
 
     <!-- JavaScript -->

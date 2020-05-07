@@ -53,11 +53,11 @@ console.log(shoppingBagIcon);
 for (let i = 0, len = addItemBtn.length | 0; i < len; i = i + 1 | 0) {
   let addItemBtnCount = addItemBtn[i];
   addItemBtnCount.onclick = function () {
+    addItemBtnCount.src = "images/icons/shopping-bag-duotone-dark.svg";
+    // let addItemBtnSrc = addItemBtnCount.src = "images/icons/shopping-bag-light.svg";
+    // setTimeout(addItemBtnSrc, 1000);
     itemCount += 1;
     shoppingBagCount.innerHTML = itemCount;
-    shoppingBagIcon[i].setAttribute("src", "images/icons/shopping-bag-duotone-dark.svg");
-    let shoppingBagIconDark = shoppingBagIcon[i].setAttribute("src", "images/icons/shopping-bag-light.svg");
-    setTimeout(shoppingBagIconDark, 1000);
     let removeItem = document.createElement("LI");
     removeItem.className = "shopping-bag-x fal fa-times";
     document.getElementById("shopping-bag-ul").appendChild(removeItem);
@@ -153,16 +153,18 @@ function homeBtnClick() {
 
 var navBtn = document.getElementById("nav-btn");
 
+var barsIcon = document.getElementById("bars-icon");
+
 navBtn.onclick = function() {navBtnClick()};
 
 function navBtnClick() {
-  if (navBtn.className == "nav-btn-on") {
+  if (barsIcon.className == "bars-icon-on") {
     document.getElementById("nav-items").className = "nav-items-on";
-    navBtn.className = "nav-btn-rotate";
+    barsIcon.className = "bars-icon-rotate";
   }
   else {
     document.getElementById("nav-items").className = "nav-items-off";
-    navBtn.className = "nav-btn-on";
+    barsIcon.className = "bars-icon-on";
   }
 }
 
