@@ -885,7 +885,7 @@ a {
     border-top: 1px solid #b88759;
     display: grid;
     grid-template-columns: 5vw 90vw 5vw;
-    grid-template-rows: 8vh 10vh 10vh 40vh 10vh 10vh;
+    grid-template-rows: 8vh 10vh 10vh 40vh 20vh;
     padding: 0;
     margin: 0;
     width: 100vw;
@@ -940,7 +940,6 @@ a {
   display: flex;
   align-self: center;
   justify-content: center;
-  border: 1px solid #DDD2D2;
   background-color: #b69e88;
   border-radius: 5%;
   padding: 5% 10% 5% 10%;
@@ -971,6 +970,7 @@ a {
   align-items: center;
   grid-template-columns: 10vw 50vw 20vw;
   grid-template-rows: repeat(auto, 5vh);
+  grid-row-gap: 2vh;
   overflow-x: hidden;
   overflow-y: scroll;
   border: 0.5vw solid #5A4D44;
@@ -994,21 +994,43 @@ a {
   grid-row: 5 / 6;
   display: grid;
   grid-template-columns: 30vw 30vw 30vw;
-  grid-template-rows: 10vh;
-  justify-content: center;
-  align-content: center;
+  grid-template-rows: 10vh 10vh;
+  justify-items: center;
+  align-items: center;
 }
 
-.close-shopping-bag {
+.checkout-btn {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  height: 80%;
+  width: 110%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  border-radius: 5%;
+  background-color: #B2775A;
+
+}
+
+.total-text {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
-  color: #5A4D44;
-  font-size: 15vw;
   height: 100%;
   width: 100%;
+  margin: 0;
+  padding: 0;
   display: flex;
-  align-items: center;
+  align-content: center;
   justify-content: center;
+}
+
+#checkout-btn-text {
+  font-size: 8vw;
+  color: #FAF8F7;
+  justify-self: center;
+  align-self: center;
 }
 
 .item-price-li {
@@ -1019,6 +1041,10 @@ a {
 .item-in-bag {
   display: flex;
   text-align: center;
+}
+
+.remove-item {
+  background-color: #5A4D44;
 }
 
 #shopping-bag-empty {
