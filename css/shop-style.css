@@ -196,6 +196,12 @@ main {
   overflow-y: scroll;
   justify-items: center;
   align-items: center;
+  transition: ease 1000ms;
+}
+
+.main {
+  height: 0;
+  transition: ease 1000ms;
 }
 
 .revealShop-off {
@@ -356,9 +362,6 @@ main p {
 #addItemBtn1-img {
   grid-column: 3 / 4;
   grid-row: 4 / 5;
-  opacity: 0.7;
-  transition: 1000ms;
-  z-index: 3;
 }
 
 #item1-price {
@@ -421,9 +424,6 @@ main p {
 #addItemBtn2-img {
   grid-column: 3 / 4;
   grid-row: 8 / 9;
-  opacity: 0.7;
-  transition: 1000ms;
-  z-index: 3;
 }
 
 #item2-price {
@@ -486,26 +486,11 @@ main p {
 #addItemBtn3-img {
   grid-column: 3 / 4;
   grid-row: 12 / 13;
-  opacity: 0.7;
-  transition: 1000ms;
-  z-index: 3;
 }
 
 #item3-price {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-self: center;
-  justify-content: center;
-  text-align: center;
   grid-column: 3 / 4;
   grid-row: 12 / 13;
-  opacity: 1;
-  transition: 1000ms;
-  z-index: 2;
-  font-size: 5vw;
-  margin-top: 8vh;
-  color: #5A4D44
 }
 
 /* -------ITEM 4------- */
@@ -551,9 +536,6 @@ main p {
 #addItemBtn4-img {
   grid-column: 3 / 4;
   grid-row: 16 / 17;
-  opacity: 0.7;
-  transition: 1000ms;
-  z-index: 3;
 }
 
 #item4-price {
@@ -570,7 +552,6 @@ main p {
   z-index: 2;
   font-size: 5vw;
   margin-top: 8vh;
-  color: #5A4D44
 }
 
 
@@ -593,12 +574,38 @@ a {
   border-radius: 5%;
   margin: 0;
   font-size: 15vw;
+  transition: 500ms;
+  z-index: 3;
 }
 
 .addItemBtn-clicked {
   background-color: #BFB1A8;
   transition: ease 750ms;
   color: #FAF8F7;
+}
+
+.item-price {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  text-align: center;
+  opacity: 1;
+  transition: 1000ms;
+  z-index: 2;
+  font-size: 5vw;
+  margin-top: 8vh;
+
+}
+
+.item-price-clicked {
+  color: #FAF8F7;
+  z-index: 2;
+}
+
+.btn-opacity {
+  opacity: 0.3;
 }
 
 /* -------SHOPPING BAG------- */
@@ -619,8 +626,8 @@ a {
   z-index: 3;
   overflow: hidden;
   opacity: 1;
-  justify-content: center;
-  align-content: center;
+  justify-items: center;
+  align-items: center;
 }
 
 .icon-home-off {
@@ -656,7 +663,7 @@ a {
   grid-column: 4 / 5;
   grid-row: 1;
   opacity: 0;
-  padding: 50%;
+  padding: 0;
   margin: 0;
   transition: ease 1000ms;
   width: 100%;
@@ -718,21 +725,24 @@ a {
 }
 
 #home-icon {
-  width: 110%;
-  height: 110%;
+  width: 100%;
+  height: 100%;
   padding: 0;
+  margin: 0;
 }
 
 #bars-icon {
   width: 60%;
   height: 60%;
   padding: 0;
+  margin: 0;
 }
 
 #nav-bag {
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
   padding: 0;
+  margin: 0;
 }
 
 
@@ -744,13 +754,14 @@ a {
   grid-row: 1;
   opacity: 0;
   margin: 0;
-  transition: ease 1500ms;
+  transition: ease 1000ms;
   width: 100%;
   height: 100%;
   z-index: 3;
   padding: 82% 0% 0% 0%;
   font-size: 8vw;
   align-self: center;
+  color: #5A4D44;
 }
 
 .shoppingBagCount-on {
@@ -761,13 +772,18 @@ a {
   grid-row: 1;
   opacity: 1;
   margin: 0;
-  transition: ease 1500ms;
+  transition: ease 1000ms;
   width: 100%;
   height: 100%;
   z-index: 3;
   padding: 82% 0% 0% 0%;
   font-size: 8vw;
   align-self: center;
+  color: #5A4D44;
+}
+
+.shoppingBagCount-wht {
+  color: #FAF8F7;
 }
 
 /* -------Navigation------- */
@@ -789,7 +805,6 @@ a {
   bottom: 12vh;
   z-index: 3;
 }
-
 
 .nav-items-on {
   background-color: rgba(179, 119, 90, 1);
@@ -819,7 +834,6 @@ a {
   grid-column: 2 / 3;
   grid-row: 3 / 4;
 }
-
 
 .nav-item3 {
   grid-column: 2 / 3;
@@ -872,7 +886,7 @@ a {
     height: 0vh;
     justify-items: center;
     align-items: center;
-    transition: ease 750ms;
+    transition: ease 500ms;
     position: fixed;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -892,7 +906,7 @@ a {
     height: 88vh;
     justify-items: center;
     align-items: center;
-    transition: ease 750ms;
+    transition: ease 500ms;
     position: fixed;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -940,9 +954,6 @@ a {
   display: flex;
   align-self: center;
   justify-content: center;
-  background-color: #b69e88;
-  border-radius: 5%;
-  padding: 5% 10% 5% 10%;
 }
 
 #shopping-bag-header-item {
@@ -1044,7 +1055,7 @@ a {
 }
 
 .remove-item {
-  background-color: #5A4D44;
+
 }
 
 #shopping-bag-empty {

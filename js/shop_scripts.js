@@ -34,6 +34,32 @@ var isInViewport = function (elem) {
     );
 };
 
+// Lazy Load images
+
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target;
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove("lazy");
+          lazyImageObserver.unobserve(lazyImage);
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage);
+    });
+  } else {
+    // Possibly fall back to a more compatible method here
+  }
+});
+
 /* -------ADD ITEM TO CART------- */
 var addItemBtn = document.getElementsByClassName("addItemBtn");
 console.log(addItemBtn);
@@ -53,29 +79,53 @@ var removeItemInBag = document.getElementsByClassName("item-in-bag");
 
 var removePrice = document.getElementsByClassName("item-price-li");
 
+var navBag = document.getElementById("nav-bag");
 
 
 for (let i = 0, len = addItemBtn.length | 0; i < len; i = i + 1 | 0) {
   let addItemBtnCount = addItemBtn[i];
   addItemBtnCount.onclick = function () {
+
+    // button click animation
     addItemBtnCount.src = "images/icons/shopping-bag-duotone-dark.svg";
-    setTimeout(function () {addItemBtnCount.src = "images/icons/shopping-bag-light.svg"; }, 300);
+    addItemBtnCount.classList.add("btn-opacity");
+    let itemPriceCount = itemPrice[i];
+    itemPriceCount.classList.add("item-price-clicked");
+    navBag.setAttribute("src", "images/icons/shopping-bag-duotone.svg");
+    navBag.className = "nav-bag-duotone";
+    setTimeout(function () {
+      addItemBtnCount.src = "images/icons/shopping-bag-light.svg";
+      addItemBtnCount.classList.remove("btn-opacity");
+      itemPriceCount.classList.remove("item-price-clicked");
+      navBag.setAttribute("src", "images/icons/shopping-bag-light-wht.svg");
+      navBag.className = "nav-bag-light";
+    }, 300);
+
+    // add 1 to bag item count
     itemCount += 1;
     shoppingBagCount.innerHTML = itemCount;
+
+    // create shopping bag item element (x)
     let removeItem = document.createElement("LI");
     removeItem.innerHTML = "x";
     removeItem.className = "remove-item";
     document.getElementById("shopping-bag-ul").appendChild(removeItem);
+
+    // create shopping bag item element (title)
     let itemInBag = document.createElement("LI");
     let itemTitleText = itemTitle[i].textContent;
     itemInBag.innerHTML = itemTitleText;
     itemInBag.className = "item-in-bag";
     document.getElementById("shopping-bag-ul").appendChild(itemInBag);
-    let itemPriceCountText = itemPrice[i].textContent;
+
+    // create shopping bag item element (price)
+    let itemPriceCountText = itemPriceCount.textContent;
     let itemPriceLI = document.createElement("LI");
     itemPriceLI.innerHTML = itemPriceCountText;
     itemPriceLI.className = "item-price-li";
     document.getElementById("shopping-bag-ul").appendChild(itemPriceLI);
+
+    // clear shopping bag empty text
     let shoppingBagEmpty = document.getElementById("shopping-bag-empty");
     document.getElementById("shopping-bag-ul").removeChild(shoppingBagEmpty);
   }
@@ -83,7 +133,6 @@ for (let i = 0, len = addItemBtn.length | 0; i < len; i = i + 1 | 0) {
 
 //-------SHOPPING BAG ON--------
 shoppingBagCount.onclick = function () {displayShoppingBagOnOff()};
-var navBag = document.getElementById("nav-bag");
 
 function displayShoppingBagOnOff() {
   if (navBag.className == "nav-bag-light") {
@@ -93,11 +142,13 @@ function displayShoppingBagOnOff() {
     console.log(removeItemBtn);
     console.log(removeItemInBag);
     console.log(removePrice);
+    setTimeout(function () {document.getElementById("main").className = "main";}, 500);
   }
   else {
     document.getElementById("display-shopping-bag").className = "display-shopping-bag-off";
     navBag.className = "nav-bag-light";
     navBag.setAttribute("src", "images/icons/shopping-bag-light-wht.svg");
+    document.getElementById("main").className = "";
   }
 }
 
@@ -108,31 +159,89 @@ var clearBagBtn = document.querySelector("#shopping-bag-header-x");
 clearBagBtn.onclick = function () {clearShoppingBag()};
 
 function clearShoppingBag() {
-  let confirmClearBag = confirm("Remove all items from your shopping bag?");
-  if (confirmClearBag == true) {
-    let shoppingBag = document.getElementById("shopping-bag-ul");
+  if (itemCount >= 1) {
+    let confirmClearBag = confirm("remove all items from your shopping bag?");
+    if (confirmClearBag == true) {
+      
+      // bag icon animation
+      navBag.className = "nav-bag-light";
+      navBag.setAttribute("src", "images/icons/shopping-bag-light-wht.svg");
+      setTimeout(function () {
+        navBag.setAttribute("src", "images/icons/shopping-bag-duotone.svg");
+        navBag.className = "nav-bag-duotone";
+      }, 300);
 
-    while (shoppingBag.hasChildNodes()) {
-      shoppingBag.removeChild(shoppingBag.firstChild);
+      // remove all items
+      let shoppingBag = document.getElementById("shopping-bag-ul");
+
+      while (shoppingBag.hasChildNodes()) {
+        shoppingBag.removeChild(shoppingBag.firstChild);
+      }
+
+      // reset shopping bag count
+      while (itemCount >= 1) {
+        itemCount -= 1;
+      }
+
+      // reset shopping bag count html
+      shoppingBagCount.innerHTML = "";
+      let shoppingBagEmpty = document.createElement("li");
+      shoppingBagEmpty.id = "shopping-bag-empty";
+      shoppingBagEmpty.innerHTML = "your shopping bag is empty.";
+      document.getElementById("shopping-bag-ul").appendChild(shoppingBagEmpty);
     }
-    while (itemCount >= 1) {
-      itemCount -= 1;
-    }
-    shoppingBagCount.innerHTML = "";
-    let shoppingBagEmpty = document.createElement("li");
-    shoppingBagEmpty.id = "shopping-bag-empty";
-    shoppingBagEmpty.innerHTML = "your shopping bag is empty.";
-    document.getElementById("shopping-bag-ul").appendChild(shoppingBagEmpty);
+  }
+  else {
+    alert("your shopping bag is empty.");
   }
 }
+
 
 // -------REMOVE BAG ITEM-------
+ window.addEventListener("click", shoppingArrayUpdate);
 
-for (let i = 0, len = removeItemBtn.length | 0; i < len; i = i + 1 | 0) {
-  let removeItemBtnCount = removeItemBtn[i];
-  removeItemBtnCount.onclick = function () {
-  }
-}
+ function shoppingArrayUpdate() {
+   var removeItemBtn = document.getElementsByClassName("remove-item");
+   console.log(removeItemBtn);
+
+   var removeItemInBag = document.getElementsByClassName("item-in-bag");
+   console.log(removeItemInBag);
+
+   var removePrice = document.getElementsByClassName("item-price-li");
+   console.log(removePrice);
+
+   for (let i = 0, len = removeItemBtn.length | 0; i < len; i = i + 1 | 0) {
+     var removeItemBtnCount = removeItemBtn[i];
+     var removeItemInBagCount = removeItemInBag[i];
+     var removePriceCount = removePrice[i];
+     removeItemBtnCount.onclick = function () {
+       // bag icon animation
+       navBag.className = "nav-bag-light";
+       navBag.setAttribute("src", "images/icons/shopping-bag-light-wht.svg");
+       setTimeout(function () {
+         navBag.setAttribute("src", "images/icons/shopping-bag-duotone.svg");
+         navBag.className = "nav-bag-duotone";
+       }, 300);
+       // remove item
+       let shoppingBagUl = document.getElementById("shopping-bag-ul");
+       shoppingBagUl.removeChild(removeItemBtnCount);
+       shoppingBagUl.removeChild(removeItemInBagCount);
+       shoppingBagUl.removeChild(removePriceCount);
+       // subtract item from bag count
+       itemCount -= 1;
+       shoppingBagCount.innerHTML = itemCount;
+       // reset bag count html
+       if (itemCount == 0) {
+         shoppingBagCount.innerHTML = "";
+         // reset shopping bag empty text
+         let shoppingBagEmpty = document.createElement("li");
+         shoppingBagEmpty.id = "shopping-bag-empty";
+         shoppingBagEmpty.innerHTML = "your shopping bag is empty.";
+         document.getElementById("shopping-bag-ul").appendChild(shoppingBagEmpty);
+       }
+     }
+   }
+ }
 
 //-------NAVIGATION-------
 document.getElementById("icon-home").onclick = function () {homeBtnClick()};
