@@ -162,7 +162,7 @@ function clearShoppingBag() {
   if (itemCount >= 1) {
     let confirmClearBag = confirm("remove all items from your shopping bag?");
     if (confirmClearBag == true) {
-      
+
       // bag icon animation
       navBag.className = "nav-bag-light";
       navBag.setAttribute("src", "images/icons/shopping-bag-light-wht.svg");
@@ -242,6 +242,18 @@ function clearShoppingBag() {
      }
    }
  }
+
+//-------Check Out Button-------
+var checkOutBtn = document.getElementById("checkout-btn");
+
+function clickCheckOut() {
+  checkOutBtn.onclick = function () {
+    checkOutBtn.className = "checkout-btn-clicked";
+    setTimeout(function () {
+      checkOutBtn.className = "checkout-btn";
+    }, 300);
+  }
+}
 
 //-------NAVIGATION-------
 document.getElementById("icon-home").onclick = function () {homeBtnClick()};
