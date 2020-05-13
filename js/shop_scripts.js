@@ -263,7 +263,7 @@ function clearShoppingBag() {
        let removePriceNum = Number(removePriceCountTxt);
        totalPriceHTML -= removePriceNum;
        totalPrice.innerHTML = "$" + totalPriceHTML;
-       
+
        // reset bag count html
        if (itemCount == 0) {
          shoppingBagCount.innerHTML = "";
@@ -335,7 +335,7 @@ var emailIconImg = document.getElementById("email-icon-img");
 
 emailBtn.onclick = function emailBtnClick () {
   emailIconImg.setAttribute("src", "images/icons/envelope-open-light.svg");
-  setTimeout(function () {emailIconImg.setAttribute("src", "images/icons/envelope-light.svg");},250);
+  setTimeout(function () {emailIconImg.setAttribute("src", "images/icons/envelope-light.svg");},300);
 }
 
 var igBtn = document.getElementById("ig-btn");
@@ -343,6 +343,7 @@ var igIconImg = document.getElementById("ig-icon-img");
 
 igBtn.onclick = function igBtnClick () {
   igIconImg.setAttribute("src", "images/icons/instagram-square-brands.svg");
+  setTimeout(function () {igIconImg.setAttribute("src", "images/icons/instagram-brands.svg");},300);
 }
 
 var signInBtn = document.getElementById("sign-in-btn");
@@ -350,6 +351,7 @@ var signInIconImg = document.getElementById("sign-in-icon-img");
 
 signInBtn.onclick = function signInBtnClick () {
   signInIconImg.setAttribute("src", "images/icons/sign-in-duotone.svg");
+  setTimeout(function () {  signInIconImg.setAttribute("src", "images/icons/sign-in-light.svg");},300);
 }
 
 
