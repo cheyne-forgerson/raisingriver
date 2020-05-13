@@ -638,7 +638,7 @@ a {
   grid-row: 1;
   margin: 20vh 0vh 0vh 0vh;
   opacity: 0;
-  transition: ease 1000ms;
+  transition: ease 500ms;
   width: 100%;
   height: 100%;
 }
@@ -651,7 +651,7 @@ a {
   grid-row: 1;
   margin: 0vh 0vh 0vh 0vh;
   opacity: 1;
-  transition: ease 1000ms;
+  transition: ease 500ms;
   width: 100%;
   height: 100%;
 }
@@ -664,8 +664,8 @@ a {
   grid-row: 1;
   opacity: 0;
   padding: 0;
-  margin: 0;
-  transition: ease 1000ms;
+  margin: 20vh 0vh 0vh 0vh;
+  transition: ease 500ms;
   width: 100%;
   height: 100%;
 }
@@ -679,7 +679,7 @@ a {
   opacity: 1;
   margin: 0;
   padding: 0;
-  transition: ease 1000ms;
+  transition: ease 500ms;
   width: 100%;
   height: 100%;
 }
@@ -701,7 +701,7 @@ a {
   grid-row: 1;
   opacity: 0;
   margin: 20vh 0vh 0vh 0vh;
-  transition: ease 1000ms;
+  transition: ease 500ms;
   width: 100%;
   height: 100%;
 }
@@ -714,7 +714,7 @@ a {
   grid-row: 1;
   opacity: 1;
   margin: 0;
-  transition: ease 1000ms;
+  transition: ease 500ms;
   width: 100%;
   height: 100%;
 }
@@ -725,22 +725,22 @@ a {
 }
 
 #home-icon {
-  width: 110%;
-  height: 110%;
+  width: 18vw;
+  height: 9vh;
   padding: 0;
   margin: 0;
 }
 
 #bars-icon {
-  width: 60%;
-  height: 60%;
+  width: 15vw;
+  height: 7.5vh;
   padding: 0;
   margin: 0;
 }
 
 #nav-bag {
-  width: 100%;
-  height: 100%;
+  width: 15vw;
+  height: 7.5vh;
   padding: 0;
   margin: 0;
 }
@@ -754,12 +754,13 @@ a {
   grid-row: 1;
   opacity: 0;
   margin: 0;
-  transition: ease 1000ms;
+  transition: ease 500ms;
   width: 100%;
   height: 100%;
   z-index: 3;
-  padding: 82% 0% 0% 0%;
-  font-size: 8vw;
+  margin: 20vh 0vh 0vh 0vh;
+  padding: 85% 0% 0% 0%;
+  font-size: 7vw;
   align-self: center;
   color: #5A4D44;
 }
@@ -772,12 +773,12 @@ a {
   grid-row: 1;
   opacity: 1;
   margin: 0;
-  transition: ease 1000ms;
+  transition: ease 500ms;
   width: 100%;
   height: 100%;
   z-index: 3;
-  padding: 82% 0% 0% 0%;
-  font-size: 8vw;
+  padding: 85% 0% 0% 0%;
+  font-size: 7vw;
   align-self: center;
   color: #5A4D44;
 }
@@ -798,7 +799,7 @@ a {
   margin: 0;
   width: 100vw;
   height: 0vh;
-  transition: ease height 750ms;
+  transition: ease height 500ms;
   position: fixed;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -811,12 +812,12 @@ a {
   border-top: 1px solid #b88759;
   display: grid;
   grid-template-columns: 10vw 80vw 10vw;
-  grid-template-rows: 10vh 20vh 20vh 20vh 10vh 8vh;
+  grid-template-rows: 8vh 20vh 20vh 20vh 20vh;
   padding: 0;
   margin: 0;
   width: 100vw;
   height: 88vh;
-  transition: ease height 750ms;
+  transition: ease height 500ms;
   position: fixed;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -838,11 +839,6 @@ a {
 .nav-item3 {
   grid-column: 2 / 3;
   grid-row: 4 / 5;
-}
-
-.nav-item4 {
-  grid-column: 2 / 3;
-  grid-row:5 / 6;
 }
 
 .nav-item {
@@ -871,6 +867,88 @@ a {
   text-shadow: 2px 2px rgb(96, 91, 83);
   transition: 1s;
 }
+
+/* -------Navigation Toolbar------- */
+/* -------NAVBAR------- */
+.nav-toolbar {
+  grid-column: 1 / 4;
+  grid-row: 5 / 6;
+  width: 100vw;
+  height: 10vh;
+  display: grid;
+  grid-template-columns: 10vw 20vw 10vw 20vw 10vw 20vw 10vw;
+  grid-template-rows: 10vh;
+  overflow: hidden;
+  opacity: 1;
+  justify-self: center;
+  align-self: center;
+  justify-items: center;
+  align-items: center;
+}
+
+#email-icon {
+  text-decoration: none;
+  background-color: inherit;
+  border: none;
+  grid-column: 2 / 3;
+  grid-row: 1;
+  transition: ease 1000ms;
+  width: 100%;
+  height: 100%;
+}
+
+.email-icon-off {
+  margin: 20vh 0vh 0vh 0vh;
+  opacity: 0;
+}
+
+.email-icon-on {
+  margin: 0vh 0vh 0vh 0vh;
+  opacity: 1;
+}
+
+#ig-icon {
+  text-decoration: none;
+  background-color: inherit;
+  border: none;
+  grid-column: 4 / 5;
+  grid-row: 1;
+  transition: ease 1000ms;
+  width: 100%;
+  height: 100%;
+}
+
+.ig-icon-off {
+  margin: 20vh 0vh 0vh 0vh;
+  opacity: 0;
+}
+
+.ig-icon-on {
+  margin: 0vh 0vh 0vh 0vh;
+  opacity: 1;
+}
+
+#sign-in-icon {
+  text-decoration: none;
+  background-color: inherit;
+  border: none;
+  grid-column: 6 / 7;
+  grid-row: 1;
+  transition: ease 1000ms;
+  width: 100%;
+  height: 100%;
+}
+
+.sign-in-icon-off {
+  margin: 20vh 0vh 0vh 0vh;
+  opacity: 0;
+}
+
+.sign-in-icon-on {
+  margin: 0vh 0vh 0vh 0vh;
+  opacity: 1;
+}
+
 
 
 /* -------DISPLAY SHOPPING BAG------- */
@@ -1016,30 +1094,43 @@ a {
   height: 80%;
   width: 110%;
   margin: 0;
-  padding: 5%;
+  padding: 2.5%;
   display: flex;
   align-self: center;
   justify-self: center;
   align-content: center;
   justify-content: center;
   border-radius: 5%;
-  font-size: 5vw;
+  font-size: 3vw;
   text-align: center;
 }
 
-.checkout-btn {
-  color: #FAF8F7;
-  background-color: #B2775A;
+.total {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-content: center;
+  justify-content: center;
 }
 
-.checkout-btn-clicked {
-  color: #5A4D44;
-  background-color: #E4CDC7;
-}
-
-
-.total-text {
+.total-items {
   grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.total-price {
+  grid-column: 3 / 4;
   grid-row: 1 / 2;
   height: 100%;
   width: 100%;

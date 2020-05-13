@@ -187,6 +187,23 @@
           collections
         </button>
       </div>
+      <div id="nav-toolbar" class="nav-toolbar">
+        <button id="email-icon" class="email-icon-on" type="button" name="button">
+          <a id="email-btn" href="javascript:setTimeout(()=>{window.location = 'mailto:hellojocelynf@gmail.com' },500);">
+            <img id="email-icon-img" src="images/icons/envelope-light.svg" alt="email">
+          </a>
+        </button>
+        <button id="ig-icon" class="ig-icon-on" type="button" name="button">
+          <a id="ig-btn" href="javascript:setTimeout(()=>{window.location = 'https://www.instagram.com/_raisingriver/?hl=en' },250);">
+            <img id="ig-icon-img" src="images/icons/instagram-brands.svg" alt="IG">
+          </a>
+        </button>
+        <button id="sign-in-icon" class="sign-in-icon-on" type="button" name="button">
+          <a id="sign-in-btn" href="javascript:setTimeout(()=>{window.location = 'https://www.instagram.com/_raisingriver/?hl=en' },250);">
+            <img id="sign-in-icon-img" src="images/icons/sign-in-light.svg" alt="sign in">
+          </a>
+        </button>
+      </div>
     </div>
 
     <!-- Shopping Bag -->
@@ -207,8 +224,17 @@
         <li id="shopping-bag-empty">your shopping bag is empty.</li>
       </ul>
       <div class="shopping-bag-nav">
+        <div class="total">
+          <h1 id="sub-total-txt">sub-total</h1>
+        </div>
+        <div class="total-items">
+          <h1 id="total-items"></h1>
+        </div>
+        <div class="total-price">
+          <h1 id="total-price"></h1>
+        </div>
         <div id="checkout-btn" class="checkout-btn">
-          <h1 id="checkout-btn-text">check out</h1>
+          <img id="checkout-btn-img" src="images/icons/cash-register-light.svg" alt="">
         </div>
       </div>
     </div>

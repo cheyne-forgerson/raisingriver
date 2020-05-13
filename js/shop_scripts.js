@@ -8,6 +8,8 @@ window.onload = setTimeout(function revealTitle() {
     document.getElementById("nav-btn").className = "nav-btn-on";
     document.getElementById("icon-bag").className = "icon-bag-on";
     document.getElementById("shoppingBagCount").className = "shoppingBagCount-on";
+    totalPrice.innerHTML = "$" + totalPriceHTML;
+    totalItems.innerHTML = itemCount;
 }, 250);
 
 window.onload = setTimeout(function welcome() {
@@ -20,7 +22,7 @@ window.onload = setTimeout(function welcome() {
 
 window.onload = setTimeout(function revealShop() {
     document.getElementById("revealShop").className = "revealShop-on";
-}, 2250);
+}, 1500);
 
 
 // IN VIEW PORT
@@ -81,6 +83,11 @@ var removePrice = document.getElementsByClassName("item-price-li");
 
 var navBag = document.getElementById("nav-bag");
 
+var totalItems = document.getElementById("total-items");
+
+var totalPrice = document.getElementById("total-price");
+
+var totalPriceHTML = 0;
 
 for (let i = 0, len = addItemBtn.length | 0; i < len; i = i + 1 | 0) {
   let addItemBtnCount = addItemBtn[i];
@@ -89,7 +96,7 @@ for (let i = 0, len = addItemBtn.length | 0; i < len; i = i + 1 | 0) {
     // button click animation
     addItemBtnCount.src = "images/icons/shopping-bag-duotone-dark.svg";
     addItemBtnCount.classList.add("btn-opacity");
-    let itemPriceCount = itemPrice[i];
+    var itemPriceCount = itemPrice[i];
     itemPriceCount.classList.add("item-price-clicked");
     navBag.setAttribute("src", "images/icons/shopping-bag-duotone.svg");
     navBag.className = "nav-bag-duotone";
@@ -104,6 +111,8 @@ for (let i = 0, len = addItemBtn.length | 0; i < len; i = i + 1 | 0) {
     // add 1 to bag item count
     itemCount += 1;
     shoppingBagCount.innerHTML = itemCount;
+    totalItems.innerHTML = itemCount;
+
 
     // create shopping bag item element (x)
     let removeItem = document.createElement("LI");
@@ -125,6 +134,12 @@ for (let i = 0, len = addItemBtn.length | 0; i < len; i = i + 1 | 0) {
     itemPriceLI.className = "item-price-li";
     document.getElementById("shopping-bag-ul").appendChild(itemPriceLI);
 
+    // add to total price
+    let itemPriceCountTxt = itemPriceCount.innerHTML.replace("$", "");
+    let itemPriceNum = Number(itemPriceCountTxt);
+    totalPriceHTML += itemPriceNum;
+    totalPrice.innerHTML = "$" + totalPriceHTML;
+
     // clear shopping bag empty text
     let shoppingBagEmpty = document.getElementById("shopping-bag-empty");
     document.getElementById("shopping-bag-ul").removeChild(shoppingBagEmpty);
@@ -139,6 +154,8 @@ function displayShoppingBagOnOff() {
     document.getElementById("display-shopping-bag").className = "display-shopping-bag-on";
     navBag.setAttribute("src", "images/icons/shopping-bag-duotone.svg");
     navBag.className = "nav-bag-duotone";
+    homeIcon.className = "icon-home-off";
+    navBtn.className = "nav-btn-off";
     console.log(removeItemBtn);
     console.log(removeItemInBag);
     console.log(removePrice);
@@ -149,6 +166,8 @@ function displayShoppingBagOnOff() {
     navBag.className = "nav-bag-light";
     navBag.setAttribute("src", "images/icons/shopping-bag-light-wht.svg");
     document.getElementById("main").className = "";
+    homeIcon.className = "icon-home-on";
+    navBtn.className = "nav-btn-on";
   }
 }
 
@@ -183,8 +202,15 @@ function clearShoppingBag() {
         itemCount -= 1;
       }
 
+      while (totalPriceHTML >= 1) {
+        totalPriceHTML -= 1;
+      }
+
+      totalPrice.innerHTML = "$" + totalPriceHTML;
+
       // reset shopping bag count html
       shoppingBagCount.innerHTML = "";
+      totalItems.innerHTML = itemCount;
       let shoppingBagEmpty = document.createElement("li");
       shoppingBagEmpty.id = "shopping-bag-empty";
       shoppingBagEmpty.innerHTML = "your shopping bag is empty.";
@@ -230,6 +256,14 @@ function clearShoppingBag() {
        // subtract item from bag count
        itemCount -= 1;
        shoppingBagCount.innerHTML = itemCount;
+       totalItems.innerHTML = itemCount;
+
+       // subtract from total price
+       let removePriceCountTxt = removePriceCount.innerHTML.replace("$", "");
+       let removePriceNum = Number(removePriceCountTxt);
+       totalPriceHTML -= removePriceNum;
+       totalPrice.innerHTML = "$" + totalPriceHTML;
+       
        // reset bag count html
        if (itemCount == 0) {
          shoppingBagCount.innerHTML = "";
@@ -246,13 +280,11 @@ function clearShoppingBag() {
 //-------Check Out Button-------
 var checkOutBtn = document.getElementById("checkout-btn");
 
-function clickCheckOut() {
-  checkOutBtn.onclick = function () {
-    checkOutBtn.className = "checkout-btn-clicked";
-    setTimeout(function () {
-      checkOutBtn.className = "checkout-btn";
-    }, 300);
-  }
+var checkOutBtnImg = document.getElementById("checkout-btn-img");
+
+checkOutBtn.onclick = function () {
+  checkOutBtnImg.setAttribute("src", "images/icons/cash-register-duotone.svg");
+  setTimeout(function (){checkOutBtnImg.setAttribute("src", "images/icons/cash-register-light.svg");}, 250)
 }
 
 //-------NAVIGATION-------
@@ -267,20 +299,62 @@ var navBtn = document.getElementById("nav-btn");
 
 var barsIcon = document.getElementById("bars-icon");
 
+var navItems = document.getElementById("nav-items");
+
+var homeIcon = document.getElementById("icon-home");
+
+var bagIcon = document.getElementById("icon-bag");
+
+
 navBtn.onclick = function() {navBtnClick()};
 
 function navBtnClick() {
-  if (barsIcon.className == "bars-icon-on") {
-    document.getElementById("nav-items").className = "nav-items-on";
-    barsIcon.className = "bars-icon-rotate";
+  if (navItems.className == "nav-items-off") {
+    navItems.className = "nav-items-on";
+    barsIcon.setAttribute("src", "images/icons/times-light.svg");
+    homeIcon.className = "icon-home-off";
+    bagIcon.className = "icon-bag-off";
+    shoppingBagCount.className = "shoppingBagCount-off";
+    setTimeout(function () {document.getElementById("main").className = "main";}, 500);
+
   }
   else {
-    document.getElementById("nav-items").className = "nav-items-off";
-    barsIcon.className = "bars-icon-on";
+    navItems.className = "nav-items-off";
+    barsIcon.setAttribute("src", "images/icons/bars-light.svg");
+    homeIcon.className = "icon-home-on";
+    bagIcon.className = "icon-bag-on";
+    shoppingBagCount.className = "shoppingBagCount-on";
+    document.getElementById("main").className = "";
   }
 }
 
+// Nav Toolbar Buttons
+
+var emailBtn = document.getElementById("email-btn");
+var emailIconImg = document.getElementById("email-icon-img");
+
+emailBtn.onclick = function emailBtnClick () {
+  emailIconImg.setAttribute("src", "images/icons/envelope-open-light.svg");
+  setTimeout(function () {emailIconImg.setAttribute("src", "images/icons/envelope-light.svg");},250);
+}
+
+var igBtn = document.getElementById("ig-btn");
+var igIconImg = document.getElementById("ig-icon-img");
+
+igBtn.onclick = function igBtnClick () {
+  igIconImg.setAttribute("src", "images/icons/instagram-square-brands.svg");
+}
+
+var signInBtn = document.getElementById("sign-in-btn");
+var signInIconImg = document.getElementById("sign-in-icon-img");
+
+signInBtn.onclick = function signInBtnClick () {
+  signInIconImg.setAttribute("src", "images/icons/sign-in-duotone.svg");
+}
+
+
 //-------END NAV-------
+
 
 
 //-------Reveal on Scroll-------
