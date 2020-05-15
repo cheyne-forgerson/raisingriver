@@ -285,6 +285,18 @@ var checkOutBtnImg = document.getElementById("checkout-btn-img");
 checkOutBtn.onclick = function () {
   checkOutBtnImg.setAttribute("src", "images/icons/cash-register-duotone.svg");
   setTimeout(function (){checkOutBtnImg.setAttribute("src", "images/icons/cash-register-light.svg");}, 250)
+
+  setTimeout(function (){
+    if (itemCount == 0) {
+      alert("your shopping bag is empty.");
+    }
+    else if (itemCount >= 1) {
+      let goToCheckout = confirm("checkout?");
+      if (goToCheckout == true) {
+      alert("yay!");
+      }
+    }
+  }, 50)
 }
 
 //-------NAVIGATION-------

@@ -641,6 +641,9 @@ a {
   transition: ease 500ms;
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 .icon-home-on {
@@ -654,8 +657,9 @@ a {
   transition: ease 500ms;
   width: 100%;
   height: 100%;
-  justify-self: center;
-  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 .nav-btn-off {
@@ -670,6 +674,9 @@ a {
   transition: ease 500ms;
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 .nav-btn-on {
@@ -686,15 +693,9 @@ a {
   height: 100%;
   justify-self: center;
   align-self: center;
-}
-
-.bars-icon-on {
-  transition: ease 500ms;
-}
-
-.bars-icon-rotate {
-  transform: rotate(-90deg);
-  transition: ease 500ms;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 .icon-bag-off {
@@ -708,6 +709,9 @@ a {
   transition: ease 500ms;
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 .icon-bag-on {
@@ -721,8 +725,9 @@ a {
   transition: ease 500ms;
   width: 100%;
   height: 100%;
-  justify-self: center;
-  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 .shopping-bag-icon-btn {
@@ -731,24 +736,30 @@ a {
 }
 
 #home-icon {
-  width: 18vw;
-  height: 9vh;
+  width: 100%;
+  height: 100%;
   padding: 0;
   margin: 0;
+  justify-self: center;
+  align-self: center;
 }
 
 #bars-icon {
-  width: 12vw;
-  height: 6vh;
+  width: 70%;
+  height: 70%;
   padding: 0;
   margin: 0;
+  justify-self: center;
+  align-self: center;
 }
 
 #nav-bag {
-  width: 15vw;
-  height: 7.5vh;
+  width: 80%;
+  height: 80%;
   padding: 0;
   margin: 0;
+  justify-self: center;
+  align-self: center;
 }
 
 
@@ -767,6 +778,7 @@ a {
   margin: 20vh 0vh 0vh 0vh;
   padding: 85% 0% 0% 0%;
   font-size: 7vw;
+  justfy-self: center;
   align-self: center;
   color: #5A4D44;
 }
@@ -785,6 +797,7 @@ a {
   z-index: 3;
   padding: 85% 0% 0% 0%;
   font-size: 7vw;
+  justfy-self: center;
   align-self: center;
   color: #5A4D44;
 }
@@ -1097,19 +1110,21 @@ a {
 #checkout-btn {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
-  height: 80%;
-  width: 110%;
-  margin: 0;
-  padding: 2.5%;
+  height: 100%;
+  width: 100%;
   display: flex;
   align-self: center;
   justify-self: center;
   align-content: center;
   justify-content: center;
-  border-radius: 5%;
-  font-size: 3vw;
-  text-align: center;
 }
+
+#checkout-btn-img {
+  height: 80%;
+  width: 80%;
+}
+
+
 
 .total {
   grid-column: 1 / 2;
@@ -1147,13 +1162,6 @@ a {
   justify-content: center;
 }
 
-#checkout-btn-text {
-  font-size: 8vw;
-  color: #FAF8F7;
-  justify-self: center;
-  align-self: center;
-}
-
 .item-price-li {
   display: flex;
   justify-content: center;
@@ -1172,6 +1180,12 @@ a {
   grid-column: 1 / 4;
   display: flex;
   text-align: center;
+}
+
+#sub-total-txt {
+  font-size: 1.5rem;
+  justify-self: center;
+  align-self: center;
 }
 
 /* Colors */
