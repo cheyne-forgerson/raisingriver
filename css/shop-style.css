@@ -644,6 +644,8 @@ a {
   display: flex;
   justify-content: center;
   align-content: center;
+  font-size: 4rem;
+  color: #FAF8F7;
 }
 
 .icon-home-on {
@@ -660,6 +662,8 @@ a {
   display: flex;
   justify-content: center;
   align-content: center;
+  font-size: 4rem;
+  color: #FAF8F7;
 }
 
 .nav-btn-off {
@@ -677,6 +681,8 @@ a {
   display: flex;
   justify-content: center;
   align-content: center;
+  font-size: 3.5rem;
+  color: #FAF8F7;
 }
 
 .nav-btn-on {
@@ -696,6 +702,8 @@ a {
   display: flex;
   justify-content: center;
   align-content: center;
+  font-size: 3.5rem;
+  color: #FAF8F7;
 }
 
 .icon-bag-off {
@@ -712,6 +720,8 @@ a {
   display: flex;
   justify-content: center;
   align-content: center;
+  font-size: 4rem;
+  color: #FAF8F7;
 }
 
 .icon-bag-on {
@@ -728,6 +738,8 @@ a {
   display: flex;
   justify-content: center;
   align-content: center;
+  font-size: 4rem;
+  color: #FAF8F7;
 }
 
 .shopping-bag-icon-btn {
@@ -754,8 +766,8 @@ a {
 }
 
 #nav-bag {
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
   padding: 0;
   margin: 0;
   justify-self: center;
@@ -777,7 +789,7 @@ a {
   z-index: 3;
   margin: 20vh 0vh 0vh 0vh;
   padding: 85% 0% 0% 0%;
-  font-size: 7vw;
+  font-size: 2rem;
   justfy-self: center;
   align-self: center;
   color: #5A4D44;
@@ -796,7 +808,7 @@ a {
   height: 100%;
   z-index: 3;
   padding: 85% 0% 0% 0%;
-  font-size: 7vw;
+  font-size: 2rem;
   justfy-self: center;
   align-self: center;
   color: #5A4D44;
@@ -804,6 +816,10 @@ a {
 
 .shoppingBagCount-wht {
   color: #FAF8F7;
+}
+
+#shoppingBagCount {
+  color: #140700;
 }
 
 /* -------Navigation------- */
