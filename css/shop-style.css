@@ -638,7 +638,7 @@ a {
   grid-row: 1;
   margin: 20vh 0vh 0vh 0vh;
   opacity: 0;
-  transition: ease 500ms;
+  transition: ease 750ms;
   width: 100%;
   height: 100%;
   display: flex;
@@ -654,7 +654,7 @@ a {
   grid-row: 1;
   margin: 0vh 0vh 0vh 0vh;
   opacity: 1;
-  transition: ease 500ms;
+  transition: ease 750ms;
   width: 100%;
   height: 100%;
   display: flex;
@@ -671,7 +671,7 @@ a {
   opacity: 0;
   padding: 0;
   margin: 20vh 0vh 0vh 0vh;
-  transition: ease 500ms;
+  transition: ease 750ms;
   width: 100%;
   height: 100%;
   display: flex;
@@ -688,7 +688,7 @@ a {
   opacity: 1;
   margin: 0;
   padding: 0;
-  transition: ease 500ms;
+  transition: ease 750ms;
   width: 100%;
   height: 100%;
   justify-self: center;
@@ -706,7 +706,7 @@ a {
   grid-row: 1;
   opacity: 0;
   margin: 20vh 0vh 0vh 0vh;
-  transition: ease 500ms;
+  transition: ease 750ms;
   width: 100%;
   height: 100%;
   display: flex;
@@ -722,7 +722,7 @@ a {
   grid-row: 1;
   opacity: 1;
   margin: 0;
-  transition: ease 500ms;
+  transition: ease 750ms;
   width: 100%;
   height: 100%;
   display: flex;
@@ -990,7 +990,7 @@ a {
     height: 0vh;
     justify-items: center;
     align-items: center;
-    transition: ease 500ms;
+    transition: ease 750ms;
     position: fixed;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -1010,7 +1010,7 @@ a {
     height: 88vh;
     justify-items: center;
     align-items: center;
-    transition: ease 500ms;
+    transition: ease 750ms;
     position: fixed;
     overflow-x: hidden;
     overflow-y: scroll;
