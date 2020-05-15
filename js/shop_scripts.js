@@ -19,10 +19,10 @@ window.onload = setTimeout(function welcome() {
 // window.onload = setTimeout(function stayAwhile() {
 //     document.getElementById("revealShop-h1-2").className = "revealShop-h1-2-on";
 // }, 3000);
-
-window.onload = setTimeout(function revealShop() {
-    document.getElementById("revealShop").className = "revealShop-on";
-}, 1500);
+// 
+// window.onload = setTimeout(function revealShop() {
+//     document.getElementById("revealShop").className = "revealShop-on";
+// }, 1500);
 
 
 // IN VIEW PORT
