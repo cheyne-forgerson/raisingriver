@@ -19,7 +19,7 @@ window.onload = setTimeout(function welcome() {
 // window.onload = setTimeout(function stayAwhile() {
 //     document.getElementById("revealShop-h1-2").className = "revealShop-h1-2-on";
 // }, 3000);
-// 
+//
 // window.onload = setTimeout(function revealShop() {
 //     document.getElementById("revealShop").className = "revealShop-on";
 // }, 1500);
@@ -365,6 +365,59 @@ signInBtn.onclick = function signInBtnClick () {
   signInIconImg.setAttribute("src", "images/icons/sign-in-duotone.svg");
   setTimeout(function () {  signInIconImg.setAttribute("src", "images/icons/sign-in-light.svg");},300);
 }
+
+// -------ABOUT-------
+
+var aboutBtn = document.getElementById("about-btn");
+var aboutSection = document.getElementById("about");
+var aboutNav = document.getElementById("about-nav");
+var closeAboutBtn = document.getElementById("close-about-btn");
+
+  aboutBtn.onclick = () => {
+    aboutSection.className = "about-on";
+    setTimeout(function (){aboutNav.className = "about-nav-on";}, 250);
+    setTimeout(navBtnClick, 500);
+    document.getElementById("titleS").className = "titleS-off";
+    document.getElementById("titleH").className = "titleH-off";
+    document.getElementById("titleO").className = "titleO-off";
+    document.getElementById("titleP").className = "titleP-off";
+    document.getElementById("titleUnderline").className = "titleUnderline-off";
+    document.getElementById("icon-home").className = "icon-home-off";
+    document.getElementById("nav-btn").className = "nav-btn-off";
+    document.getElementById("icon-bag").className = "icon-bag-off";
+    document.getElementById("shoppingBagCount").className = "shoppingBagCount-off";
+}
+
+  closeAboutBtn.onclick = () => {
+    aboutSection.className = "about-off";
+    aboutNav.className = "about-nav-off";
+    document.getElementById("titleS").className = "titleS-on";
+    document.getElementById("titleH").className = "titleH-on";
+    document.getElementById("titleO").className = "titleO-on";
+    document.getElementById("titleP").className = "titleP-on";
+    document.getElementById("titleUnderline").className = "titleUnderline-on";
+    document.getElementById("icon-home").className = "icon-home-on";
+    document.getElementById("nav-btn").className = "nav-btn-on";
+    document.getElementById("icon-bag").className = "icon-bag-on";
+    document.getElementById("shoppingBagCount").className = "shoppingBagCount-on";
+  }
+
+var aboutNavBars = document.getElementById("about-nav-bars");
+
+  aboutNavBars.onclick = () => {
+    aboutSection.className = "about-off";
+    aboutNav.className = "about-nav-off";
+    setTimeout(navBtnClick, 0);
+    document.getElementById("titleS").className = "titleS-on";
+    document.getElementById("titleH").className = "titleH-on";
+    document.getElementById("titleO").className = "titleO-on";
+    document.getElementById("titleP").className = "titleP-on";
+    document.getElementById("titleUnderline").className = "titleUnderline-on";
+    document.getElementById("icon-home").className = "icon-home-on";
+    document.getElementById("nav-btn").className = "nav-btn-on";
+    document.getElementById("icon-bag").className = "icon-bag-on";
+    document.getElementById("shoppingBagCount").className = "shoppingBagCount-on";
+  }
 
 
 //-------END NAV-------
