@@ -303,8 +303,10 @@ checkOutBtn.onclick = function () {
 document.getElementById("icon-home").onclick = function () {homeBtnClick()};
 
 function homeBtnClick() {
-  document.getElementById("icon-home").className = "icon-home-off";
-  setTimeout(window.location.href = 'index.html', 5000);
+  aboutSection.className = "about-on";
+  setTimeout(function (){aboutNav.className = "about-nav-on";}, 250);
+  navItems.className = "nav-items-off";
+  setTimeout(function () {document.getElementById("main").className = "main";}, 500);
 }
 
 var navBtn = document.getElementById("nav-btn");
@@ -386,6 +388,7 @@ var closeAboutBtn = document.getElementById("close-about-btn");
     document.getElementById("nav-btn").className = "nav-btn-off";
     document.getElementById("icon-bag").className = "icon-bag-off";
     document.getElementById("shoppingBagCount").className = "shoppingBagCount-off";
+    setTimeout(function () {document.getElementById("main").className = "main";}, 500);
 }
 
   closeAboutBtn.onclick = () => {
@@ -400,6 +403,7 @@ var closeAboutBtn = document.getElementById("close-about-btn");
     document.getElementById("nav-btn").className = "nav-btn-on";
     document.getElementById("icon-bag").className = "icon-bag-on";
     document.getElementById("shoppingBagCount").className = "shoppingBagCount-on";
+    document.getElementById("main").className = "";
   }
 
 var aboutNavBars = document.getElementById("about-nav-bars");
@@ -417,6 +421,7 @@ var aboutNavBars = document.getElementById("about-nav-bars");
     document.getElementById("nav-btn").className = "nav-btn-on";
     document.getElementById("icon-bag").className = "icon-bag-on";
     document.getElementById("shoppingBagCount").className = "shoppingBagCount-on";
+    document.getElementById("main").className = "";
   }
 
 

@@ -1232,7 +1232,7 @@ a {
   overflow-x: hidden;
   overflow-y: scroll;
   background-color: #FAF8F7;
-  scroll-snap-type: y proximity;
+  scroll-snap-type: y mandatory;
 }
 
 #about-header {
@@ -1241,7 +1241,7 @@ a {
   grid-template-rows: 100vh;
   justify-items: center;
   align-items: center;
-  scroll-snap-align: center;
+  scroll-snap-align: start;
 }
 
 #about-header-title {
@@ -1325,15 +1325,15 @@ a {
   background-color: #FAF8F7;
   display: grid;
   grid-template-columns: 100vw;
-  grid-template-rows: 30vh 40vh 30vh;
+  grid-template-rows: 8vh 25vh 34vh 25vh 8vh;
   justify-items: center;
   align-items: center;
-  scroll-snap-align: center;
+  scroll-snap-align: start;
 }
 
 #about-sml {
   grid-column: 1 / 2;
-  grid-row: 1 / 2;
+  grid-row: 2 / 3;
   width: 20%;
   height: 60%;
   justify-self: center;
@@ -1342,16 +1342,16 @@ a {
 
 #about-hrt {
   grid-column: 1 / 2;
-  grid-row: 2 / 3;
-  width: 80%;
-  height: 75%;
+  grid-row: 3 / 4;
+  width: 60%;
+  height: 60%;
   justify-self: center;
   align-self: center;
 }
 
 #about-every {
   grid-column: 1 / 2;
-  grid-row: 3 / 4;
+  grid-row: 4 / 5;
   width: 20%;
   height: 60%;
   justify-self: center;
