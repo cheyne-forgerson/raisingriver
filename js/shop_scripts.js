@@ -16,6 +16,24 @@ window.onload = setTimeout(function welcome() {
     document.getElementById("revealShop-h1-1").className = "revealShop-h1-1-on";
 }, 500);
 
+
+
+function toggleFullScreen() {
+  var doc = window.document;
+  var docEl = doc.documentElement;
+
+  var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+  var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+  if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+    requestFullScreen.call(docEl);
+  }
+  else {
+    cancelFullScreen.call(doc);
+  }
+}
+
+
 // window.onload = setTimeout(function stayAwhile() {
 //     document.getElementById("revealShop-h1-2").className = "revealShop-h1-2-on";
 // }, 3000);

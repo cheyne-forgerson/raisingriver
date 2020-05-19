@@ -1065,14 +1065,14 @@ a {
 }
 
 #shopping-bag-header-item {
-  font-size: 5vw;
+  font-size: 4vw;
   display: flex;
   align-self: center;
   justify-content: center;
 }
 
 #shopping-bag-header-price {
-  font-size: 5vw;
+  font-size: 4vw;
   display: flex;
   align-self: center;
   justify-content: center;
@@ -1098,13 +1098,13 @@ a {
 }
 
 .shopping-bag-ul li {
-  font-size: 8vw;
+  font-size: 7vw;
 }
 
 .shopping-bag-title {
   grid-column: 1 / 4;
   grid-row: 2 / 3;
-  font-size: 15vw;
+  font-size: 10vw;
   color: #140700;
 }
 
@@ -1194,7 +1194,7 @@ a {
 }
 
 #sub-total-txt {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   justify-self: center;
   align-self: center;
 }
@@ -1275,7 +1275,8 @@ a {
   bottom: 2vh;
   height: 10vh;
   width: 100vw;
-  margin-top: 0vh;
+  transform: translateY(20vh);
+  margin: 0;
   z-index: 7;
   opacity: 0;
   display: grid;
@@ -1283,16 +1284,17 @@ a {
   grid-template-rows: 10vh;
   justify-items: center;
   align-items: center;
-  transition: ease 1000ms;
+  transition: ease 500ms;
 }
-/* ^ Remove & fix JS */
+
 
 .about-nav-on {
   position: fixed;
   bottom: 2vh;
   height: 10vh;
   width: 100vw;
-  margin-top: 0vh;
+  transform: translateY(0vh);
+  margin: 0;
   z-index: 7;
   opacity: 0.8;
   display: grid;
@@ -1300,7 +1302,7 @@ a {
   grid-template-rows: 10vh;
   justify-items: center;
   align-items: center;
-  transition: ease 1000ms;
+  transition: ease 500ms;
 }
 
 #about-nav-bars {
