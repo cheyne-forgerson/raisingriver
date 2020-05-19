@@ -389,6 +389,7 @@ var closeAboutBtn = document.getElementById("close-about-btn");
     document.getElementById("icon-bag").className = "icon-bag-off";
     document.getElementById("shoppingBagCount").className = "shoppingBagCount-off";
     setTimeout(function () {document.getElementById("main").className = "main";}, 500);
+    aboutSection.requestFullscreen();
 }
 
   closeAboutBtn.onclick = () => {
@@ -404,6 +405,7 @@ var closeAboutBtn = document.getElementById("close-about-btn");
     document.getElementById("icon-bag").className = "icon-bag-on";
     document.getElementById("shoppingBagCount").className = "shoppingBagCount-on";
     document.getElementById("main").className = "";
+    document.exitFullscreen();
   }
 
 var aboutNavBars = document.getElementById("about-nav-bars");
@@ -465,6 +467,7 @@ aboutArrow.onclick = () => {
     });
   }
 }
+
 
 //-------END NAV-------
 
