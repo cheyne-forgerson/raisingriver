@@ -457,25 +457,25 @@ var aboutArrow = document.getElementById("about-arrow");
 
 
 aboutArrow.onclick = () => {
-  if (about.scrollTop >= 0 && about.scrollTop < window.innerHeight * 3){
+  if (about.scrollTop >= 0 && about.scrollTop < document.documentElement.clientHeight * 3){
     aboutArrow.setAttribute("src", "images/icons/angle-down-solid.svg");
     setTimeout(function () {aboutArrow.setAttribute("src", "images/icons/angle-down-light.svg");}, 250);
     about.scrollBy({
-      top: window.innerHeight,
+      top: document.documentElement.clientHeight,
       left: 0,
       behavior: 'smooth'
     });
   }
-  else if (about.scrollTop == window.innerHeight * 3){
+  else if (about.scrollTop == document.documentElement.clientHeight * 3){
     aboutArrow.setAttribute("src", "images/icons/angle-down-solid.svg");
     setTimeout(function () {aboutArrow.setAttribute("src", "images/icons/angle-double-up-light.svg");}, 250);
     about.scrollBy({
-      top: window.innerHeight,
+      top: document.documentElement.clientHeight,
       left: 0,
       behavior: 'smooth'
     });
   }
-  else if (about.scrollTop == window.innerHeight * 4){
+  else if (about.scrollTop == document.documentElement.clientHeight * 4){
     aboutArrow.setAttribute("src", "images/icons/angle-double-up-solid.svg");
     setTimeout(function () {aboutArrow.setAttribute("src", "images/icons/angle-down-light.svg");}, 900);
     about.scroll({
