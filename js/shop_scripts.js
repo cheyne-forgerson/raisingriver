@@ -444,6 +444,7 @@ var aboutNavBars = document.getElementById("about-nav-bars");
     document.getElementById("main").className = "";
   }
 
+
 // about scroll button
 
 var about = document.getElementById("about");
@@ -457,7 +458,7 @@ var aboutArrow = document.getElementById("about-arrow");
 
 
 aboutArrow.onclick = () => {
-  if (about.scrollTop >= 0 && about.scrollTop < document.documentElement.clientHeight * 3){
+  if (about.scrollTop >= 0 && about.scrollTop < document.documentElement.clientHeight * 2){
     aboutArrow.setAttribute("src", "images/icons/angle-down-solid.svg");
     setTimeout(function () {aboutArrow.setAttribute("src", "images/icons/angle-down-light.svg");}, 250);
     about.scrollBy({
@@ -466,7 +467,7 @@ aboutArrow.onclick = () => {
       behavior: 'smooth'
     });
   }
-  else if (about.scrollTop == document.documentElement.clientHeight * 3){
+  else if (about.scrollTop == document.documentElement.clientHeight * 2){
     aboutArrow.setAttribute("src", "images/icons/angle-down-solid.svg");
     setTimeout(function () {aboutArrow.setAttribute("src", "images/icons/angle-double-up-light.svg");}, 250);
     about.scrollBy({
@@ -475,7 +476,7 @@ aboutArrow.onclick = () => {
       behavior: 'smooth'
     });
   }
-  else if (about.scrollTop == document.documentElement.clientHeight * 4){
+  else if (about.scrollTop == document.documentElement.clientHeight * 3){
     aboutArrow.setAttribute("src", "images/icons/angle-double-up-solid.svg");
     setTimeout(function () {aboutArrow.setAttribute("src", "images/icons/angle-down-light.svg");}, 900);
     about.scroll({
@@ -486,6 +487,27 @@ aboutArrow.onclick = () => {
   }
 }
 
+about.addEventListener("scroll", function () {
+  if (about.scrollTop == document.documentElement.clientHeight * 3){
+    aboutArrow.setAttribute("src", "images/icons/angle-double-up-light.svg");
+  }
+  else if (about.scrollTop == document.documentElement.clientHeight * 3){
+    aboutArrow.setAttribute("src", "images/icons/angle-down-light.svg")
+  }
+}, false);
+
+// SCROLL DIRECTION
+// var lastScrollTop = 0;
+// // element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
+// about.addEventListener("scroll", function(){ // or window.addEventListener("scroll"....
+//    var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+//    if (st > lastScrollTop){
+//       // downscroll code
+//    } else {
+//       // upscroll code
+//    }
+//    lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+// }, false);
 
 //-------END NAV-------
 
