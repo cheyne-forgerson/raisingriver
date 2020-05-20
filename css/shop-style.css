@@ -1237,7 +1237,7 @@ a {
   grid-template-rows: 100vh;
   justify-items: center;
   align-items: center;
-  scroll-snap-align: start;
+  scroll-snap-align: end;
 }
 
 #about-header-title {
@@ -1339,7 +1339,7 @@ a {
     display: grid;
     grid-template-columns: 10vw 20vw 20vw 20vw 20vw 10vw;
     grid-template-rows: 10vh 40vh 40vh 10vh;
-    scroll-snap-align: center;
+    scroll-snap-align: end;
     justify-items: center;
     align-items: center;
   }
@@ -1369,7 +1369,7 @@ a {
     display: grid;
     grid-template-columns: 10vw 20vw 20vw 20vw 20vw 10vw;
     grid-template-rows: 10vh 40vh 40vh 10vh;
-    scroll-snap-align: center;
+    scroll-snap-align: end;
     justify-items: center;
     align-items: center;
   }
@@ -1405,7 +1405,7 @@ a {
     grid-template-rows: 15vh 20vh 30vh 20vh 15vh;
     justify-items: center;
     align-items: center;
-    scroll-snap-align: center;
+    scroll-snap-align: end;
   }
 
   #about-every3 {
