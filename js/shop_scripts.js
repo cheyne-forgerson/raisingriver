@@ -1,20 +1,20 @@
-window.onload = setTimeout(function revealTitle() {
-    document.getElementById("titleS").className = "titleS-on";
-    document.getElementById("titleH").className = "titleH-on";
-    document.getElementById("titleO").className = "titleO-on";
-    document.getElementById("titleP").className = "titleP-on";
-    document.getElementById("titleUnderline").className = "titleUnderline-on";
-    document.getElementById("icon-home").className = "icon-home-on";
-    document.getElementById("nav-btn").className = "nav-btn-on";
-    document.getElementById("icon-bag").className = "icon-bag-on";
-    document.getElementById("shoppingBagCount").className = "shoppingBagCount-on";
-    totalPrice.innerHTML = "$" + totalPriceHTML;
-    totalItems.innerHTML = itemCount;
-}, 250);
-
-window.onload = setTimeout(function welcome() {
-    document.getElementById("revealShop-h1-1").className = "revealShop-h1-1-on";
-}, 500);
+// window.onload = setTimeout(function revealTitle() {
+//     document.getElementById("titleS").className = "titleS-on";
+//     document.getElementById("titleH").className = "titleH-on";
+//     document.getElementById("titleO").className = "titleO-on";
+//     document.getElementById("titleP").className = "titleP-on";
+//     document.getElementById("titleUnderline").className = "titleUnderline-on";
+//     document.getElementById("icon-home").className = "icon-home-on";
+//     document.getElementById("nav-btn").className = "nav-btn-on";
+//     document.getElementById("icon-bag").className = "icon-bag-on";
+//     document.getElementById("shoppingBagCount").className = "shoppingBagCount-on";
+//     totalPrice.innerHTML = "$" + totalPriceHTML;
+//     totalItems.innerHTML = itemCount;
+// }, 250);
+//
+// window.onload = setTimeout(function welcome() {
+//     document.getElementById("revealShop-h1-1").className = "revealShop-h1-1-on";
+// }, 500);
 
 
 
@@ -32,6 +32,7 @@ function toggleFullScreen() {
     cancelFullScreen.call(doc);
   }
 }
+
 
 
 // window.onload = setTimeout(function stayAwhile() {
@@ -413,17 +414,18 @@ var closeAboutBtn = document.getElementById("close-about-btn");
   closeAboutBtn.onclick = () => {
     aboutSection.className = "about-off";
     aboutNav.className = "about-nav-off";
-    document.getElementById("titleS").className = "titleS-on";
-    document.getElementById("titleH").className = "titleH-on";
-    document.getElementById("titleO").className = "titleO-on";
-    document.getElementById("titleP").className = "titleP-on";
-    document.getElementById("titleUnderline").className = "titleUnderline-on";
-    document.getElementById("icon-home").className = "icon-home-on";
-    document.getElementById("nav-btn").className = "nav-btn-on";
-    document.getElementById("icon-bag").className = "icon-bag-on";
-    document.getElementById("shoppingBagCount").className = "shoppingBagCount-on";
     document.getElementById("main").className = "";
-    document.exitFullscreen();
+    setTimeout(function (){
+      homeIcon.className = "icon-home-on";
+      bagIcon.className = "icon-bag-on";
+      document.getElementById("nav-btn").className = "nav-btn-on";
+      shoppingBagCount.className = "shoppingBagCount-on";
+      document.getElementById("titleS").className = "titleS-on";
+      document.getElementById("titleH").className = "titleH-on";
+      document.getElementById("titleO").className = "titleO-on";
+      document.getElementById("titleP").className = "titleP-on";
+      document.getElementById("titleUnderline").className = "titleUnderline-on";
+    }, 250);
   }
 
 var aboutNavBars = document.getElementById("about-nav-bars");
@@ -491,7 +493,7 @@ about.addEventListener("scroll", function () {
   if (about.scrollTop == document.documentElement.clientHeight * 3){
     aboutArrow.setAttribute("src", "images/icons/angle-double-up-light.svg");
   }
-  else if (about.scrollTop == document.documentElement.clientHeight * 3){
+  else if (about.scrollTop < document.documentElement.clientHeight * 3){
     aboutArrow.setAttribute("src", "images/icons/angle-down-light.svg")
   }
 }, false);

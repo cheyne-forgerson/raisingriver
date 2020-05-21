@@ -811,15 +811,16 @@ a {
 
 .nav-items-off {
   background-color: rgba(179, 119, 90, 1);
-  border: none;
+  border-top: 1px solid #b88759;
   display: grid;
   grid-template-columns: 10vw 80vw 10vw;
-  grid-template-rows: 10vh 20vh 20vh 20vh 20vh 10vh;
+  grid-template-rows: 8vh 20vh 20vh 20vh 20vh;
   padding: 0;
   margin: 0;
   width: 100vw;
-  height: 0vh;
-  transition: ease height 500ms;
+  height: 88vh;
+  transform: translateX(100vw);
+  transition: 300ms;
   position: fixed;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -837,7 +838,8 @@ a {
   margin: 0;
   width: 100vw;
   height: 88vh;
-  transition: ease height 500ms;
+  transform: translateX(0vw);
+  transition: 300ms;
   position: fixed;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -1333,9 +1335,6 @@ a {
   #about-section1 {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
-    min-width: 100vw;
-    min-height: 100vh;
-    background-color: #FAF8F7;
     display: grid;
     grid-template-columns: 10vw 20vw 20vw 20vw 20vw 10vw;
     grid-template-rows: 10vh 40vh 40vh 10vh;
@@ -1346,7 +1345,7 @@ a {
 
   #about-section1-img {
     grid-column: 1 / 7;
-    grid-row: 1 / 5;
+    grid-row: 1 / 6;
     object-fit: cover;
     width: 100%;
     height: 100%;
@@ -1354,9 +1353,10 @@ a {
 
   #sct1-1 {
     grid-column: 2 / 6;
-    grid-row: 3 / 4;
-    justify-self: center;
-    align-self: center;
+    grid-row: 2 / 3;
+    display: flex;
+    justify-content: center;
+    align-content: center;
     width: 30%;
     height: 55%;
   }
