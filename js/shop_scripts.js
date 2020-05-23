@@ -457,46 +457,61 @@ var aboutChildrenCount = 0;
 
 var aboutArrow = document.getElementById("about-arrow");
 
+var scrollAbout = document.getElementsByClassName("scroll-about");
+console.log(scrollAbout);
 
 
-aboutArrow.onclick = () => {
-  if (about.scrollTop >= 0 && about.scrollTop < document.documentElement.clientHeight * 2){
-    aboutArrow.setAttribute("src", "images/icons/angle-down-solid.svg");
-    setTimeout(function () {aboutArrow.setAttribute("src", "images/icons/angle-down-light.svg");}, 250);
-    about.scrollBy({
-      top: document.documentElement.clientHeight,
-      left: 0,
-      behavior: 'smooth'
-    });
-  }
-  else if (about.scrollTop == document.documentElement.clientHeight * 2){
-    aboutArrow.setAttribute("src", "images/icons/angle-down-solid.svg");
-    setTimeout(function () {aboutArrow.setAttribute("src", "images/icons/angle-double-up-light.svg");}, 250);
-    about.scrollBy({
-      top: document.documentElement.clientHeight,
-      left: 0,
-      behavior: 'smooth'
-    });
-  }
-  else if (about.scrollTop == document.documentElement.clientHeight * 3){
-    aboutArrow.setAttribute("src", "images/icons/angle-double-up-solid.svg");
-    setTimeout(function () {aboutArrow.setAttribute("src", "images/icons/angle-down-light.svg");}, 900);
-    about.scroll({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    });
+
+// aboutArrow.onclick = () => {
+//   if (about.scrollTop >= 0 && about.scrollTop < document.documentElement.clientHeight * 2){
+//     aboutArrow.setAttribute("src", "images/icons/angle-down-solid.svg");
+//     setTimeout(function () {aboutArrow.setAttribute("src", "images/icons/angle-down-light.svg");}, 250);
+//     about.scrollBy({
+//       top: document.documentElement.clientHeight,
+//       left: 0,
+//       behavior: 'smooth'
+//     });
+//   }
+//   else if (about.scrollTop == document.documentElement.clientHeight * 2){
+//     aboutArrow.setAttribute("src", "images/icons/angle-down-solid.svg");
+//     setTimeout(function () {aboutArrow.setAttribute("src", "images/icons/angle-double-up-light.svg");}, 250);
+//     about.scrollBy({
+//       top: document.documentElement.clientHeight,
+//       left: 0,
+//       behavior: 'smooth'
+//     });
+//   }
+//   else if (about.scrollTop == document.documentElement.clientHeight * 3){
+//     aboutArrow.setAttribute("src", "images/icons/angle-double-up-solid.svg");
+//     setTimeout(function () {aboutArrow.setAttribute("src", "images/icons/angle-down-light.svg");}, 900);
+//     about.scroll({
+//       top: 0,
+//       left: 0,
+//       behavior: 'smooth'
+//     });
+//   }
+// }
+//
+// about.addEventListener("scroll", function () {
+//   if (about.scrollTop == document.documentElement.clientHeight * 3){
+//     aboutArrow.setAttribute("src", "images/icons/angle-double-up-light.svg");
+//   }
+//   else if (about.scrollTop < document.documentElement.clientHeight * 3){
+//     aboutArrow.setAttribute("src", "images/icons/angle-down-light.svg")
+//   }
+// }, false);
+
+for (let i = 0, len = scrollAbout.length | 0; i < len; i = i + 1 | 0) {
+  var scrollAboutCount = scrollAbout[i];
+  if (isInViewport(scrollAboutCount)) {
+    aboutArrow.onclick = () => {
+      scrollAboutCount += 1;
+      aboutArrow.setAttribute("src", "images/icons/angle-down-solid.svg");
+      setTimeout(function () {aboutArrow.setAttribute("src", "images/icons/angle-down-light.svg");}, 250);
+      about.scrollTo(scrollAboutCount);
+    }
   }
 }
-
-about.addEventListener("scroll", function () {
-  if (about.scrollTop == document.documentElement.clientHeight * 3){
-    aboutArrow.setAttribute("src", "images/icons/angle-double-up-light.svg");
-  }
-  else if (about.scrollTop < document.documentElement.clientHeight * 3){
-    aboutArrow.setAttribute("src", "images/icons/angle-down-light.svg")
-  }
-}, false);
 
 // SCROLL DIRECTION
 // var lastScrollTop = 0;
