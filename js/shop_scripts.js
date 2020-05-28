@@ -44,16 +44,7 @@ function toggleFullScreen() {
 // }, 1500);
 
 
-// IN VIEW PORT
-var isInViewport = function (elem) {
-    var bounding = elem.getBoundingClientRect();
-    return (
-        bounding.top >= 0 &&
-        bounding.left >= 0 &&
-        bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-};
+
 
 // Lazy Load images
 
@@ -117,7 +108,7 @@ for (let i = 0, len = addItemBtn.length | 0; i < len; i = i + 1 | 0) {
     addItemBtnCount.classList.add("btn-opacity");
     var itemPriceCount = itemPrice[i];
     itemPriceCount.classList.add("item-price-clicked");
-    navBag.setAttribute("src", "images/icons/shopping-bag-duotone.svg");
+    navBag.setAttribute("src", "images/icons/shopping-bag-duotone-dark.svg");
     navBag.className = "nav-bag-duotone";
     setTimeout(function () {
       addItemBtnCount.src = "images/icons/shopping-bag-light.svg";
@@ -425,6 +416,7 @@ var closeAboutBtn = document.getElementById("close-about-btn");
       document.getElementById("titleO").className = "titleO-on";
       document.getElementById("titleP").className = "titleP-on";
       document.getElementById("titleUnderline").className = "titleUnderline-on";
+      navbar.classList.remove("navbar-off");
     }, 250);
   }
 
@@ -433,6 +425,7 @@ var aboutNavBars = document.getElementById("about-nav-bars");
   aboutNavBars.onclick = () => {
     aboutSection.className = "about-off";
     aboutNav.className = "about-nav-off";
+    navbar.classList.remove("navbar-off");
     setTimeout(navBtnClick, 0);
     document.getElementById("titleS").className = "titleS-on";
     document.getElementById("titleH").className = "titleH-on";
@@ -459,6 +452,8 @@ var aboutArrow = document.getElementById("about-arrow");
 
 var scrollAbout = document.getElementsByClassName("scroll-about");
 console.log(scrollAbout);
+
+var scrollAboutNum = 0;
 
 
 
@@ -501,17 +496,76 @@ console.log(scrollAbout);
 //   }
 // }, false);
 
-for (let i = 0, len = scrollAbout.length | 0; i < len; i = i + 1 | 0) {
-  var scrollAboutCount = scrollAbout[i];
-  if (isInViewport(scrollAboutCount)) {
-    aboutArrow.onclick = () => {
-      scrollAboutCount += 1;
-      aboutArrow.setAttribute("src", "images/icons/angle-down-solid.svg");
-      setTimeout(function () {aboutArrow.setAttribute("src", "images/icons/angle-down-light.svg");}, 250);
-      about.scrollTo(scrollAboutCount);
+// aboutArrow.onclick = () => {
+//   aboutArrow.setAttribute("src", "images/icons/angle-down-solid.svg");
+//   setTimeout(function () {aboutArrow.setAttribute("src", "images/icons/angle-down-light.svg");}, 250);
+//   scrollAbout[0].nextElementSibling.scrollIntoView();
+// }
+
+
+// IN VIEW PORT
+var isInViewport = function (elem) {
+    var bounding = elem.getBoundingClientRect();
+    return (
+        bounding.top >= 0 &&
+        bounding.left >= 0 &&
+        bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+};
+
+
+aboutArrow.addEventListener("click", function scrollAboutClick(){
+  aboutArrow.setAttribute("src", "images/icons/angle-down-solid.svg");
+  setTimeout(function () {aboutArrow.setAttribute("src", "images/icons/angle-down-light.svg");}, 250);
+  for (var i = 0; i < aboutChildren.length; i++) {
+    var aboutChildrenCount = aboutChildren[i];
+    if (aboutChildrenCount.offsetTop == window.pageYOffset){
+      aboutChildrenCount.nextElementSibling.scrollIntoView({
+      behavior: "smooth"
+      });
     }
+
   }
+})
+
+/* WINDOW ON SCROLL NAV */
+var main = document.getElementById("main");
+var navbar = document.getElementById("navbar");
+
+// window.addEventListener("scroll", function (){
+//   navbar.classList.remove("navbar-off");
+// })
+
+/* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    navbar.classList.remove("navbar-off");
+  } else {
+    navbar.classList.add("navbar-off");
+  }
+  prevScrollpos = currentScrollPos;
 }
+
+// var timer = null;
+// window.addEventListener("scroll", function() {
+//     if(timer !== null) {
+//         clearTimeout(timer);
+//     }
+//     timer = setTimeout(function() {
+//         navbar.classList.remove("navbar-off");
+//     }, 2000);
+// }, false);
+
+// function scrollAbout(){
+//   aboutArrow.onclick = () => {
+//
+//
+//   }
+// }
+
 
 // SCROLL DIRECTION
 // var lastScrollTop = 0;
