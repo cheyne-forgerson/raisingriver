@@ -746,8 +746,8 @@ a {
 }
 
 #home-icon {
-  width: 4rem;
-  height: 4rem;
+  width: 60%;
+  height: 60%;
   padding: 0;
   margin: 0;
   justify-self: center;
@@ -756,8 +756,8 @@ a {
 }
 
 #bars-icon {
-  width: 3rem;
-  height: 3rem;
+  width: 40%;
+  height: 40%;
   padding: 0;
   margin: 0;
   justify-self: center;
@@ -766,8 +766,8 @@ a {
 }
 
 #nav-bag {
-  width: 4rem;
-  height: 4rem;
+  width: 50%;
+  height: 50%;
   padding: 0;
   margin: 0;
   justify-self: center;
@@ -789,7 +789,7 @@ a {
   height: 100%;
   z-index: 3;
   margin: 20vh 0vh 0vh 0vh;
-  padding: 85% 0% 0% 0%;
+  padding: 90% 0% 0% 0%;
   font-size: 1.5rem;
   justfy-self: center;
   align-self: center;
@@ -1318,8 +1318,8 @@ a {
 #about-nav-bars {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
-  width: 6vh;
-  height: 6vh;
+  width: 40%;
+  height: 40%;
   display: flex;
   align-self: center;
   justify-self: center;
@@ -1328,8 +1328,8 @@ a {
 #about-arrow {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
-  width: 6vh;
-  height: 6vh;
+  width: 40%;
+  height: 40%;
   display: flex;
   align-self: center;
   justify-self: center;
@@ -1338,8 +1338,8 @@ a {
 #close-about-btn {
   grid-column: 3 / 4;
   grid-row: 1 / 2;
-  width: 8vh;
-  height: 8vh;
+  width: 40%;
+  height: 40%;
   display: flex;
   align-self: center;
   justify-self: center;
