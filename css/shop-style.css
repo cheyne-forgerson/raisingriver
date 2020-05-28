@@ -746,8 +746,8 @@ a {
 }
 
 #home-icon {
-  width: 60%;
-  height: 60%;
+  width: 70%;
+  height: 70%;
   padding: 0;
   margin: 0;
   justify-self: center;
@@ -756,8 +756,8 @@ a {
 }
 
 #bars-icon {
-  width: 40%;
-  height: 40%;
+  width: 50%;
+  height: 50%;
   padding: 0;
   margin: 0;
   justify-self: center;
@@ -766,8 +766,8 @@ a {
 }
 
 #nav-bag {
-  width: 50%;
-  height: 50%;
+  width: 60%;
+  height: 60%;
   padding: 0;
   margin: 0;
   justify-self: center;
@@ -1318,8 +1318,8 @@ a {
 #about-nav-bars {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
-  width: 40%;
-  height: 40%;
+  width: 50%;
+  height: 50%;
   display: flex;
   align-self: center;
   justify-self: center;
@@ -1328,8 +1328,8 @@ a {
 #about-arrow {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
-  width: 40%;
-  height: 40%;
+  width: 50%;
+  height: 50%;
   display: flex;
   align-self: center;
   justify-self: center;
@@ -1338,8 +1338,8 @@ a {
 #close-about-btn {
   grid-column: 3 / 4;
   grid-row: 1 / 2;
-  width: 40%;
-  height: 40%;
+  width: 50%;
+  height: 50%;
   display: flex;
   align-self: center;
   justify-self: center;
