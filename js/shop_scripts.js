@@ -575,6 +575,26 @@ var infoSection = document.getElementById("info");
     }, 250);
   }
 
+var infoNavBars = document.getElementById("info-nav-bars");
+
+  infoNavBars.onclick = () => {
+    infoSection.className = "info-off";
+    infoNav.className = "info-nav-off";
+    infoNav.classList.remove("info-off");
+    setTimeout(navBtnClick, 0);
+    document.getElementById("titleS").className = "titleS-on";
+    document.getElementById("titleH").className = "titleH-on";
+    document.getElementById("titleO").className = "titleO-on";
+    document.getElementById("titleP").className = "titleP-on";
+    document.getElementById("titleUnderline").className = "titleUnderline-on";
+    document.getElementById("icon-home").className = "icon-home-on";
+    document.getElementById("nav-btn").className = "nav-btn-on";
+    document.getElementById("icon-bag").className = "icon-bag-on";
+    document.getElementById("shoppingBagCount").className = "shoppingBagCount-on";
+    document.getElementById("main").className = "";
+  }
+
+
 // var timer = null;
 // window.addEventListener("scroll", function() {
 //     if(timer !== null) {
