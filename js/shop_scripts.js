@@ -384,10 +384,11 @@ var aboutBtn = document.getElementById("about-btn");
 var aboutSection = document.getElementById("about");
 var aboutNav = document.getElementById("about-nav");
 var closeAboutBtn = document.getElementById("close-about-btn");
+var infoSection = document.getElementById("info");
 
   aboutBtn.onclick = () => {
-    aboutSection.className = "about-on";
-    setTimeout(function (){aboutNav.className = "about-nav-on";}, 250);
+    infoSection.className = "info-on";
+    infoNav.className = "info-nav-on";
     setTimeout(navBtnClick, 500);
     document.getElementById("titleS").className = "titleS-off";
     document.getElementById("titleH").className = "titleH-off";
@@ -399,7 +400,7 @@ var closeAboutBtn = document.getElementById("close-about-btn");
     document.getElementById("icon-bag").className = "icon-bag-off";
     document.getElementById("shoppingBagCount").className = "shoppingBagCount-off";
     setTimeout(function () {document.getElementById("main").className = "main";}, 500);
-    aboutSection.requestFullscreen();
+
 }
 
   closeAboutBtn.onclick = () => {
@@ -548,6 +549,31 @@ window.onscroll = function() {
   }
   prevScrollpos = currentScrollPos;
 }
+
+
+// INFO
+
+var infoNav = document.getElementById("info-nav");
+var closeInfoBtn = document.getElementById("close-info-btn");
+var infoSection = document.getElementById("info");
+
+  closeInfoBtn.onclick = () => {
+    infoSection.className = "info-off";
+    infoNav.className = "info-nav-off";
+    document.getElementById("main").className = "";
+    setTimeout(function (){
+      homeIcon.className = "icon-home-on";
+      bagIcon.className = "icon-bag-on";
+      document.getElementById("nav-btn").className = "nav-btn-on";
+      shoppingBagCount.className = "shoppingBagCount-on";
+      document.getElementById("titleS").className = "titleS-on";
+      document.getElementById("titleH").className = "titleH-on";
+      document.getElementById("titleO").className = "titleO-on";
+      document.getElementById("titleP").className = "titleP-on";
+      document.getElementById("titleUnderline").className = "titleUnderline-on";
+      navbar.classList.remove("navbar-off");
+    }, 250);
+  }
 
 // var timer = null;
 // window.addEventListener("scroll", function() {
