@@ -51,8 +51,8 @@
 
       <div id="item1" class="item1-on">
         <img class="product-img rotate" loading="lazy" src="images/products/amelia_600px.jpg" alt="image">
-        <img class="product-img rotate" loading="lazy" src="images/products/amelia_2_600px.jpg" alt="image">
         <img class="product-img rotate" loading="lazy" src="images/products/amelia_3_600px.jpg" alt="image">
+        <img class="product-img rotate" loading="lazy" src="images/products/amelia_2_600px.jpg" alt="image">
       </div>
       <div id="item1-swipe-arrow" class="swipe-arrow">
         <i class="fal fa-arrows-h"></i>
@@ -62,9 +62,8 @@
       <p id="item1-price" class="item-price">$28</p>
     <!-- Item 2 -->
     <div id="item2" class="item2-on">
-      <img class="product-img rotate" loading="lazy" src="images/products/amelia_test_1_resize.jpg" alt="image">
-      <img class="product-img rotate" loading="lazy" src="images/products/amelia_test_1_resize.jpg" alt="image">
-      <img class="product-img rotate" loading="lazy" src="images/products/amelia_test_1_resize.jpg" alt="image">
+      <img class="product-img rotate" loading="lazy" src="images/products/amelia_sea_foam1.jpg" alt="image">
+      <img class="product-img rotate" loading="lazy" src="images/products/amelia_sea_foam2.jpg" alt="image">
     </div>
     <div id="item2-swipe-arrow" class="swipe-arrow">
       <i class="fal fa-arrows-h"></i>
@@ -74,23 +73,23 @@
     <p id="item2-price" class="item-price">$28</p>
     <!-- Item 3 -->
     <div id="item3" class="item3-on">
-      <img class="product-img rotate" loading="lazy" src="images/products/amelia_test_1_resize.jpg" alt="image">
-      <img class="product-img rotate" loading="lazy" src="images/products/amelia_test_1_resize.jpg" alt="image">
-      <img class="product-img rotate" loading="lazy" src="images/products/amelia_test_1_resize.jpg" alt="image">
+      <img class="product-img rotate" loading="lazy" src="images/products/lotta2.jpg" alt="image">
+      <img class="product-img rotate" loading="lazy" src="images/products/lotta1.jpg" alt="image">
+      <img class="product-img rotate" loading="lazy" src="images/products/lotta3.jpg" alt="image">
       <!-- <img class="product-img" src="images/products/amelia-almond_ear.jpg" alt="">
       <img class="product-img" src="images/products/amelia-almond_field.jpg" alt=""> -->
     </div>
     <div id="item3-swipe-arrow" class="swipe-arrow">
       <i class="fal fa-arrows-h"></i>
     </div>
-    <p id="item3-title" class="item-title">arch || succulent</p>
+    <p id="item3-title" class="item-title">lotta || lilac</p>
     <img id="addItemBtn3-img" loading="lazy" class="addItemBtn" src="images/icons/shopping-bag-light.svg" alt="">
-    <p id="item3-price" class="item-price">$30</p>
+    <p id="item3-price" class="item-price">$28</p>
     <!-- Item 4 -->
     <div id="item4" class="item4-on">
-      <img class="product-img rotate" loading="lazy" src="images/products/amelia_test_1_resize.jpg" alt="image">
-      <img class="product-img rotate" loading="lazy" src="images/products/amelia_test_1_resize.jpg" alt="image">
-      <img class="product-img rotate" loading="lazy" src="images/products/amelia_test_1_resize.jpg" alt="image">
+      <img class="product-img rotate" loading="lazy" src="images/products/ever_almond1.jpg" alt="image">
+      <img class="product-img rotate" loading="lazy" src="images/products/ever_almond2.jpg" alt="image">
+      <img class="product-img rotate" loading="lazy" src="images/products/ever_almond3.jpg" alt="image">
     </div>
     <div id="item4-swipe-arrow" class="swipe-arrow">
       <i class="fal fa-arrows-h"></i>
@@ -118,19 +117,16 @@
 
     <!-- Hamburger -->
     <div id="nav-items" class="nav-items-off">
-      <div class="nav-item1">
-        <button id="about-btn" class="nav-btn" type="button" name="button">
-          about
-        </button>
-      </div>
       <div class="nav-item2">
-        <button class="nav-btn" type="button" name="button" onclick="window.location.href = 'shop.html';">
-          shop
+        <button id="nav-btn" class="nav-btn" type="button" name="button" onclick="window.location.href = 'shop.html';">
+          <img src="images/icons/phone-rotary-light.svg" alt="contact">
+          <p>contact</p>
         </button>
       </div>
       <div class="nav-item3">
-        <button class="nav-btn" type="button" name="button" onclick="window.location.href = 'index.html';">
-          collections
+        <button id="about-btn" class="nav-btn" type="button" name="button">
+          <img src="images/icons/info-square-light.svg" alt="info">
+          <p>info</p>
         </button>
       </div>
       <div id="nav-toolbar" class="nav-toolbar">
@@ -145,7 +141,7 @@
           </a>
         </button>
         <button id="sign-in-icon" class="sign-in-icon-on" type="button" name="button">
-          <a id="sign-in-btn" href="javascript:setTimeout(()=>{window.location = 'https://www.instagram.com/_raisingriver/?hl=en' },250);">
+          <a id="sign-in-btn">
             <img id="sign-in-icon-img" src="images/icons/sign-in-light.svg" alt="sign in">
           </a>
         </button>
@@ -174,10 +170,10 @@
           <h1 id="sub-total-txt">sub-total</h1>
         </div>
         <div class="total-items">
-          <h1 id="total-items"></h1>
+          <h1 id="total-items">0</h1>
         </div>
         <div class="total-price">
-          <h1 id="total-price"></h1>
+          <h1 id="total-price">$0</h1>
         </div>
         <div id="checkout-btn" class="checkout-btn">
           <img id="checkout-btn-img" src="images/icons/cash-register-light.svg" alt="">

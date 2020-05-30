@@ -376,6 +376,7 @@ var signInIconImg = document.getElementById("sign-in-icon-img");
 signInBtn.onclick = function signInBtnClick () {
   signInIconImg.setAttribute("src", "images/icons/sign-in-duotone.svg");
   setTimeout(function () {  signInIconImg.setAttribute("src", "images/icons/sign-in-light.svg");},300);
+  setTimeout(function () { window.alert("sign in coming soon...")}, 400);
 }
 
 // -------ABOUT-------
