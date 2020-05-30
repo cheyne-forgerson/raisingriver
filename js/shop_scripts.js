@@ -356,14 +356,20 @@ function navBtnClick() {
 
 var emailBtn = document.getElementById("email-btn");
 var emailIconImg = document.getElementById("email-icon-img");
-// var giveBtn = document.getElementById("give-btn");
-// var giveBtnImg = document.getElementById("give-btn-img");
+var giveBtn = document.getElementById("give-btn");
+var giveBtnImg = document.getElementById("give-btn-img");
+var contactBtn = document.getElementById("contact-btn");
+var contactBtnImg = document.getElementById("contact-btn-img");
 
+giveBtn.onclick = function giveBtnClick () {
+  giveBtnImg.setAttribute("src", "images/give2.png");
+  setTimeout(function () {giveBtnImg.setAttribute("src", "images/give1.png");},750);
+}
 
-// giveBtn.onclick = function giveBtnClick () {
-//   giveBtnImg.setAttribute("src", "images/give2.png");
-//   setTimeout(function () {giveBtnImg.setAttribute("src", "images/give1.png");},1000);
-// }
+contactBtn.onclick = function contactBtnClick () {
+  contactBtnImg.setAttribute("src", "images/4.png");
+  setTimeout(function () {contactBtnImg.setAttribute("src", "images/contact.png");},750);
+}
 
 emailBtn.onclick = function emailBtnClick () {
   emailIconImg.setAttribute("src", "images/icons/envelope-open-light.svg");
@@ -394,10 +400,13 @@ var aboutSection = document.getElementById("about");
 var aboutNav = document.getElementById("about-nav");
 var closeAboutBtn = document.getElementById("close-about-btn");
 var infoSection = document.getElementById("info");
+var infoBtnImg = document.getElementById("info-btn-img");
 
   aboutBtn.onclick = () => {
     infoSection.className = "info-on";
     infoNav.className = "info-nav-on";
+    infoBtnImg.setAttribute("src", "images/12.png");
+    setTimeout(function () {infoBtnImg.setAttribute("src", "images/13.png");},750);
     setTimeout(navBtnClick, 500);
     document.getElementById("titleS").className = "titleS-off";
     document.getElementById("titleH").className = "titleH-off";
@@ -553,8 +562,11 @@ window.onscroll = function() {
   var currentScrollPos = window.pageYOffset;
   if (prevScrollpos > currentScrollPos) {
     navbar.classList.remove("navbar-off");
-  } else {
+  } else if (navItems.className != "nav-items-on"){
     navbar.classList.add("navbar-off");
+  }
+  else {
+    navbar.classList.remove("navbar-off");
   }
   prevScrollpos = currentScrollPos;
 }
