@@ -356,6 +356,14 @@ function navBtnClick() {
 
 var emailBtn = document.getElementById("email-btn");
 var emailIconImg = document.getElementById("email-icon-img");
+var giveBtn = document.getElementById("give-btn");
+var giveBtnImg = document.getElementById("give-btn-img");
+
+
+giveBtn.onclick = function giveBtnClick () {
+  giveBtnImg.setAttribute("src", "images/give2.png");
+  setTimeout(function () {giveBtnImg.setAttribute("src", "images/give1.png");},1000);
+}
 
 emailBtn.onclick = function emailBtnClick () {
   emailIconImg.setAttribute("src", "images/icons/envelope-open-light.svg");

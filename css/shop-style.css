@@ -842,6 +842,7 @@ a {
   overflow-y: scroll;
   bottom: 12vh;
   z-index: 3;
+  color: #FAF8F7;
 }
 
 .nav-items-on {
@@ -861,17 +862,21 @@ a {
   overflow-y: scroll;
   bottom: 12vh;
   z-index: 3;
+  color: #FAF8F7;
+}
+
+.nav-text {
+  color: #E4CDC7;
 }
 
 .nav-item1 {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
-
 }
 
-#about-btn img{
-  width: 4rem;
-  height: 4rem;
+#give-btn-img {
+  width: 50%;
+  height: 50%;
 }
 
 .nav-item2 {
@@ -879,14 +884,19 @@ a {
   grid-row: 3 / 4;
 }
 
-#nav-btn img {
-  width: 4rem;
-  height: 4rem;
+#contact-btn-img{
+  width: 25%;
+  height: 50%;
 }
 
 .nav-item3 {
   grid-column: 2 / 3;
   grid-row: 4 / 5;
+}
+
+#info-btn-img {
+  width: 25%;
+  height: 75%;
 }
 
 .nav-item {
@@ -906,13 +916,6 @@ a {
   font-size: 10vw;
   padding: 5% 0% 5% 0%;
   margin: 0;
-  transition: 1s;
-}
-
-.nav-btn:hover {
-  text-decoration: none;
-  color: #E6D9CC;
-  text-shadow: 2px 2px rgb(96, 91, 83);
   transition: 1s;
 }
 
