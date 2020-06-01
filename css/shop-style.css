@@ -1698,7 +1698,7 @@ a {
   left: 0;
   display: grid;
   grid-template-columns: 10vw 80vw 10vw;
-  grid-template-rows: 10vh 20vh 40vh 20vh 10vh;
+  grid-template-rows: 10vh 20vh 40vh 10vh 10vh 10vh;
   background-color: #E4CDC7;
   z-index: 7;
   justify-items: center;
@@ -1841,7 +1841,7 @@ a {
 
 #contact-social {
   grid-column: 2 / 3;
-  grid-row: 4 / 5;
+  grid-row: 5 / 6;
   width: 80vw;
   height: 20vh;
   display: grid;
@@ -1852,7 +1852,7 @@ a {
 
 #contact-social-background {
   grid-column: 1 / 4;
-  grid-row: 4 / 5;
+  grid-row: 5 / 6;
   width: 110vw;
   height: 20vh;
   opacity: 0.75;
