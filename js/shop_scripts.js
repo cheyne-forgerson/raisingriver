@@ -371,6 +371,8 @@ contactBtn.onclick = function contactBtnClick () {
   contactBtnImg.setAttribute("src", "images/4.png");
   contactPage.classList.remove("contact-off");
   contactPage.classList.add("contact-on");
+  document.getElementById("main").className = "";
+  setTimeout(navBtnClick, 0);
   setTimeout(function () {contactBtnImg.setAttribute("src", "images/contact.png");},750);
 }
 
