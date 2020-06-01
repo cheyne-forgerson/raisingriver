@@ -360,6 +360,7 @@ var giveBtn = document.getElementById("give-btn");
 var giveBtnImg = document.getElementById("give-btn-img");
 var contactBtn = document.getElementById("contact-btn");
 var contactBtnImg = document.getElementById("contact-btn-img");
+var contactPage = document.getElementById("contact");
 
 giveBtn.onclick = function giveBtnClick () {
   giveBtnImg.setAttribute("src", "images/give2.png");
@@ -368,6 +369,8 @@ giveBtn.onclick = function giveBtnClick () {
 
 contactBtn.onclick = function contactBtnClick () {
   contactBtnImg.setAttribute("src", "images/4.png");
+  contactPage.classList.remove("contact-off");
+  contactPage.classList.add("contact-on");
   setTimeout(function () {contactBtnImg.setAttribute("src", "images/contact.png");},750);
 }
 
@@ -614,6 +617,9 @@ var infoNavBars = document.getElementById("info-nav-bars");
     document.getElementById("shoppingBagCount").className = "shoppingBagCount-on";
     document.getElementById("main").className = "";
   }
+
+// -------CONTACT-------
+
 
 
 // var timer = null;
