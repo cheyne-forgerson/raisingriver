@@ -1771,7 +1771,6 @@ a {
   display: grid;
   grid-template-columns: 30vw 50vw;
   grid-template-rows: repeat(auto, 10vh);
-  text-align: right;
 }
 
 .form-input {
@@ -1790,12 +1789,14 @@ a {
   grid-row: 1 / 2;
   width: 100%;
   height: 100%;
+  text-align: right;
 }
 
 #first-name-input {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
   width: 100%;
+  text-align: right;
 }
 
 #last-name-label {
@@ -1803,12 +1804,14 @@ a {
   grid-row: 2 / 3;
   width: 100%;
   height: 100%;
+  text-align: right;
 }
 
 #last-name-input {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
   width: 100%;
+  text-align: right;
 }
 
 #email-label {
@@ -1816,12 +1819,14 @@ a {
   grid-row: 3 / 4;
   width: 100%;
   height: 100%;
+  text-align: right;
 }
 
 #email-input {
   grid-column: 2 / 3;
   grid-row: 3 / 4;
   width: 100%;
+  text-align: right;
 }
 
 #message-label {
@@ -1829,6 +1834,7 @@ a {
   grid-row: 4 / 5;
   width: 100%;
   height: 100%;
+  text-align: right;
 }
 
 #message-input {
@@ -1836,6 +1842,7 @@ a {
   grid-row: 4 / 6;
   width: 100%;
   height: 100%;
+  text-align: right;
 }
 
 #submit {
@@ -1854,7 +1861,7 @@ a {
 
 #contact-social {
   grid-column: 2 / 3;
-  grid-row: 5 / 6;
+  grid-row: 4 / 6;
   width: 80vw;
   height: 20vh;
   display: grid;
@@ -1865,7 +1872,7 @@ a {
 
 #contact-social-background {
   grid-column: 1 / 4;
-  grid-row: 5 / 6;
+  grid-row: 4 / 6;
   width: 110vw;
   height: 20vh;
   opacity: 0.75;
@@ -1885,6 +1892,73 @@ a {
   justify-self: center;
   align-self: center;
 }
+
+/* -------contact nav------- */
+.contact-nav-off {
+  position: fixed;
+  bottom: 2vh;
+  height: 10vh;
+  width: 100vw;
+  transform: translateY(20vh);
+  margin: 0;
+  z-index: 7;
+  opacity: 0;
+  display: grid;
+  grid-template-columns: 30vw 40vw 30vw;
+  grid-template-rows: 10vh;
+  justify-items: center;
+  align-items: center;
+  transition: ease 500ms;
+}
+
+
+.contact-nav-on {
+  position: fixed;
+  bottom: 2vh;
+  height: 10vh;
+  width: 100vw;
+  transform: translateY(0vh);
+  margin: 0;
+  z-index: 7;
+  opacity: 0.8;
+  display: grid;
+  grid-template-columns: 30vw 40vw 30vw;
+  grid-template-rows: 10vh;
+  justify-items: center;
+  align-items: center;
+  transition: ease 500ms;
+}
+
+#contact-nav-bars {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  align-self: center;
+  justify-self: center;
+}
+
+#contact-arrow {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  align-self: center;
+  justify-self: center;
+}
+
+#close-contact-btn {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  align-self: center;
+  justify-self: center;
+}
+
 
 /* Colors */
 .colors {

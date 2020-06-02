@@ -16,6 +16,71 @@
 //     document.getElementById("revealShop-h1-1").className = "revealShop-h1-1-on";
 // }, 500);
 
+// -------VARIABLES-------
+
+        // --items
+var addItemBtn = document.getElementsByClassName("addItemBtn");
+console.log(addItemBtn);
+
+var itemTitle = document.getElementsByClassName("item-title");
+console.log(itemTitle);
+
+var itemPrice = document.getElementsByClassName("item-price");
+console.log(itemPrice);
+
+        //--shopping bag
+var shoppingBagCount = document.getElementById("shoppingBagCount");
+
+var itemCount = 0;
+
+var removeItemBtn = document.getElementsByClassName("remove-item");
+
+var removeItemInBag = document.getElementsByClassName("item-in-bag");
+
+var removePrice = document.getElementsByClassName("item-price-li");
+
+var navBag = document.getElementById("nav-bag");
+
+var totalItems = document.getElementById("total-items");
+
+var totalPrice = document.getElementById("total-price");
+
+var totalPriceHTML = 0;
+
+var clearBagBtn = document.querySelector("#shopping-bag-header-x");
+
+            // --remove item
+var removeItemBtn = document.getElementsByClassName("remove-item");
+console.log(removeItemBtn);
+
+var removeItemInBag = document.getElementsByClassName("item-in-bag");
+console.log(removeItemInBag);
+
+var removePrice = document.getElementsByClassName("item-price-li");
+console.log(removePrice);
+
+            // --check out
+var checkOutBtn = document.getElementById("checkout-btn");
+
+var checkOutBtnImg = document.getElementById("checkout-btn-img");
+
+          // --navigation
+              // --shop nav
+var navBtn = document.getElementById("nav-btn");
+var barsIcon = document.getElementById("bars-icon");
+var navItems = document.getElementById("nav-items");
+var homeIcon = document.getElementById("icon-home");
+var bagIcon = document.getElementById("icon-bag");
+              // --nav menu nav
+var emailBtn = document.getElementById("email-btn");
+var emailIconImg = document.getElementById("email-icon-img");
+var giveBtn = document.getElementById("give-btn");
+var giveBtnImg = document.getElementById("give-btn-img");
+var contactBtn = document.getElementById("contact-btn");
+var contactBtnImg = document.getElementById("contact-btn-img");
+              // -- contact nav
+var contactPage = document.getElementById("contact");
+var contactNav = document.getElementById("contact-nav");
 
 
 function toggleFullScreen() {
@@ -73,32 +138,6 @@ function toggleFullScreen() {
 // });
 
 /* -------ADD ITEM TO CART------- */
-var addItemBtn = document.getElementsByClassName("addItemBtn");
-console.log(addItemBtn);
-
-var shoppingBagCount = document.getElementById("shoppingBagCount");
-var itemCount = 0;
-
-var itemTitle = document.getElementsByClassName("item-title");
-console.log(itemTitle);
-
-var itemPrice = document.getElementsByClassName("item-price");
-console.log(itemPrice);
-
-var removeItemBtn = document.getElementsByClassName("remove-item");
-
-var removeItemInBag = document.getElementsByClassName("item-in-bag");
-
-var removePrice = document.getElementsByClassName("item-price-li");
-
-var navBag = document.getElementById("nav-bag");
-
-var totalItems = document.getElementById("total-items");
-
-var totalPrice = document.getElementById("total-price");
-
-var totalPriceHTML = 0;
-
 for (let i = 0, len = addItemBtn.length | 0; i < len; i = i + 1 | 0) {
   let addItemBtnCount = addItemBtn[i];
   addItemBtnCount.onclick = function () {
@@ -182,9 +221,6 @@ function displayShoppingBagOnOff() {
 }
 
 // -------CLEAR SHOPPING BAG-------
-
-var clearBagBtn = document.querySelector("#shopping-bag-header-x");
-
 clearBagBtn.onclick = function () {clearShoppingBag()};
 
 function clearShoppingBag() {
@@ -233,18 +269,12 @@ function clearShoppingBag() {
 }
 
 
+
 // -------REMOVE BAG ITEM-------
  window.addEventListener("click", shoppingArrayUpdate);
 
  function shoppingArrayUpdate() {
-   var removeItemBtn = document.getElementsByClassName("remove-item");
-   console.log(removeItemBtn);
 
-   var removeItemInBag = document.getElementsByClassName("item-in-bag");
-   console.log(removeItemInBag);
-
-   var removePrice = document.getElementsByClassName("item-price-li");
-   console.log(removePrice);
 
    for (let i = 0, len = removeItemBtn.length | 0; i < len; i = i + 1 | 0) {
      var removeItemBtnCount = removeItemBtn[i];
@@ -288,10 +318,6 @@ function clearShoppingBag() {
  }
 
 //-------Check Out Button-------
-var checkOutBtn = document.getElementById("checkout-btn");
-
-var checkOutBtnImg = document.getElementById("checkout-btn-img");
-
 checkOutBtn.onclick = function () {
   checkOutBtnImg.setAttribute("src", "images/icons/cash-register-duotone.svg");
   setTimeout(function (){checkOutBtnImg.setAttribute("src", "images/icons/cash-register-light.svg");}, 250)
@@ -319,16 +345,6 @@ function homeBtnClick() {
   setTimeout(function () {document.getElementById("main").className = "main";}, 500);
 }
 
-var navBtn = document.getElementById("nav-btn");
-
-var barsIcon = document.getElementById("bars-icon");
-
-var navItems = document.getElementById("nav-items");
-
-var homeIcon = document.getElementById("icon-home");
-
-var bagIcon = document.getElementById("icon-bag");
-
 
 navBtn.onclick = function() {navBtnClick()};
 
@@ -354,13 +370,6 @@ function navBtnClick() {
 
 // Nav Toolbar Buttons
 
-var emailBtn = document.getElementById("email-btn");
-var emailIconImg = document.getElementById("email-icon-img");
-var giveBtn = document.getElementById("give-btn");
-var giveBtnImg = document.getElementById("give-btn-img");
-var contactBtn = document.getElementById("contact-btn");
-var contactBtnImg = document.getElementById("contact-btn-img");
-var contactPage = document.getElementById("contact");
 
 giveBtn.onclick = function giveBtnClick () {
   giveBtnImg.setAttribute("src", "images/give2.png");
@@ -368,13 +377,65 @@ giveBtn.onclick = function giveBtnClick () {
 }
 
 contactBtn.onclick = function contactBtnClick () {
+  document.getElementById("main").className = "main";
   contactBtnImg.setAttribute("src", "images/4.png");
   contactPage.classList.remove("contact-off");
   contactPage.classList.add("contact-on");
-  document.getElementById("main").className = "";
+  contactNav.className = "contact-nav-on";
   setTimeout(navBtnClick, 0);
   setTimeout(function () {contactBtnImg.setAttribute("src", "images/contact.png");},750);
 }
+
+// contact nav
+
+var closeContactBtn = document.getElementById("close-contact-btn");
+
+closeContactBtn.onclick = () => {
+  contactPage.className = "contact-off";
+  contactNav.className = "contact-nav-off";
+  document.getElementById("main").className = "";
+  setTimeout(function (){
+    homeIcon.className = "icon-home-on";
+    bagIcon.className = "icon-bag-on";
+    document.getElementById("nav-btn").className = "nav-btn-on";
+    shoppingBagCount.className = "shoppingBagCount-on";
+    document.getElementById("titleS").className = "titleS-on";
+    document.getElementById("titleH").className = "titleH-on";
+    document.getElementById("titleO").className = "titleO-on";
+    document.getElementById("titleP").className = "titleP-on";
+    document.getElementById("titleUnderline").className = "titleUnderline-on";
+    navbar.classList.remove("navbar-off");
+  }, 250);
+}
+
+var contactNavBars = document.getElementById("contact-nav-bars");
+
+ contactNavBars.onclick = () => {
+  contactPage.className = "contact-off";
+  contactNav.className = "contact-nav-off";
+  navbar.classList.remove("navbar-off");
+  setTimeout(navBtnClick, 0);
+  document.getElementById("titleS").className = "titleS-on";
+  document.getElementById("titleH").className = "titleH-on";
+  document.getElementById("titleO").className = "titleO-on";
+  document.getElementById("titleP").className = "titleP-on";
+  document.getElementById("titleUnderline").className = "titleUnderline-on";
+  document.getElementById("icon-home").className = "icon-home-on";
+  document.getElementById("nav-btn").className = "nav-btn-on";
+  document.getElementById("icon-bag").className = "icon-bag-on";
+  document.getElementById("shoppingBagCount").className = "shoppingBagCount-on";
+  document.getElementById("main").className = "";
+}
+
+// end contact nav
+
+
+// reusable functions
+function changeImg (element, source) {
+  element.setAttribute("src", source);
+}
+
+// end reusable functions
 
 emailBtn.onclick = function emailBtnClick () {
   emailIconImg.setAttribute("src", "images/icons/envelope-open-light.svg");
