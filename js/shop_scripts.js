@@ -1,21 +1,3 @@
-// window.onload = setTimeout(function revealTitle() {
-//     document.getElementById("titleS").className = "titleS-on";
-//     document.getElementById("titleH").className = "titleH-on";
-//     document.getElementById("titleO").className = "titleO-on";
-//     document.getElementById("titleP").className = "titleP-on";
-//     document.getElementById("titleUnderline").className = "titleUnderline-on";
-//     document.getElementById("icon-home").className = "icon-home-on";
-//     document.getElementById("nav-btn").className = "nav-btn-on";
-//     document.getElementById("icon-bag").className = "icon-bag-on";
-//     document.getElementById("shoppingBagCount").className = "shoppingBagCount-on";
-//     totalPrice.innerHTML = "$" + totalPriceHTML;
-//     totalItems.innerHTML = itemCount;
-// }, 250);
-//
-// window.onload = setTimeout(function welcome() {
-//     document.getElementById("revealShop-h1-1").className = "revealShop-h1-1-on";
-// }, 500);
-
 // -------VARIABLES-------
 
         // --items
@@ -609,19 +591,19 @@ var navbar = document.getElementById("navbar");
 // })
 
 /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
-var prevScrollpos = window.pageYOffset;
-window.onscroll = function() {
-  var currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
-    navbar.classList.remove("navbar-off");
-  } else if (navItems.className != "nav-items-on"){
-    navbar.classList.add("navbar-off");
-  }
-  else {
-    navbar.classList.remove("navbar-off");
-  }
-  prevScrollpos = currentScrollPos;
-}
+// var prevScrollpos = window.pageYOffset;
+// window.onscroll = function() {
+//   var currentScrollPos = window.pageYOffset;
+//   if (prevScrollpos > currentScrollPos) {
+//     navbar.classList.remove("navbar-off");
+//   } else if (navItems.className != "nav-items-on"){
+//     navbar.classList.add("navbar-off");
+//   }
+//   else {
+//     navbar.classList.remove("navbar-off");
+//   }
+//   prevScrollpos = currentScrollPos;
+// }
 
 
 // INFO
@@ -633,6 +615,7 @@ var infoSection = document.getElementById("info");
   closeInfoBtn.onclick = () => {
     infoSection.className = "info-off";
     infoNav.className = "info-nav-off";
+    setTimeout(navBtnClick, 0);
     document.getElementById("main").className = "";
     setTimeout(function (){
       homeIcon.className = "icon-home-on";
@@ -654,17 +637,6 @@ var infoNavBars = document.getElementById("info-nav-bars");
     infoSection.className = "info-off";
     infoNav.className = "info-nav-off";
     infoNav.classList.remove("info-off");
-    setTimeout(navBtnClick, 0);
-    document.getElementById("titleS").className = "titleS-on";
-    document.getElementById("titleH").className = "titleH-on";
-    document.getElementById("titleO").className = "titleO-on";
-    document.getElementById("titleP").className = "titleP-on";
-    document.getElementById("titleUnderline").className = "titleUnderline-on";
-    document.getElementById("icon-home").className = "icon-home-on";
-    document.getElementById("nav-btn").className = "nav-btn-on";
-    document.getElementById("icon-bag").className = "icon-bag-on";
-    document.getElementById("shoppingBagCount").className = "shoppingBagCount-on";
-    document.getElementById("main").className = "";
   }
 
 // -------CONTACT-------
