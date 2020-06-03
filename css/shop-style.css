@@ -9,7 +9,6 @@ body {
   letter-spacing: 0.2rem;
 }
 
-
 @media only screen and (orientation: landscape) {
   .show {
     display: grid;
@@ -303,8 +302,8 @@ main p {
 
 .product-img {
   display: flex;
-  width: 100%;
-  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
   object-fit: cover;
   margin: 0;
   padding: 0;
@@ -1784,7 +1783,7 @@ a {
   outline-color: #b88759;
 }
 
-#first-name-label {
+#name-label {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
   width: 100%;
@@ -1792,31 +1791,16 @@ a {
   text-align: right;
 }
 
-#first-name-input {
+#name-input {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
-  width: 100%;
-  text-align: right;
-}
-
-#last-name-label {
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
-  width: 100%;
-  height: 100%;
-  text-align: right;
-}
-
-#last-name-input {
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
   width: 100%;
   text-align: right;
 }
 
 #email-label {
   grid-column: 1 / 2;
-  grid-row: 3 / 4;
+  grid-row: 2 / 3;
   width: 100%;
   height: 100%;
   text-align: right;
@@ -1824,14 +1808,14 @@ a {
 
 #email-input {
   grid-column: 2 / 3;
-  grid-row: 3 / 4;
+  grid-row: 2 / 3;
   width: 100%;
   text-align: right;
 }
 
 #message-label {
   grid-column: 1 / 2;
-  grid-row: 4 / 5;
+  grid-row: 3 / 4;
   width: 100%;
   height: 100%;
   text-align: right;
@@ -1839,7 +1823,7 @@ a {
 
 #message-input {
   grid-column: 2 / 3;
-  grid-row: 4 / 6;
+  grid-row: 3 / 4;
   width: 100%;
   height: 100%;
   text-align: right;
@@ -1847,12 +1831,15 @@ a {
 
 #submit {
   grid-column: 1 / 3;
-  grid-row: 7 / 8;
+  grid-row: 5 / 6;
   width: 20%;
   height: 50%;
   margin-top: 10%;
   justify-self: center;
   align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #FAF8F7;
   border: 1px solid #5A4D44;
   border-radius: 5%;

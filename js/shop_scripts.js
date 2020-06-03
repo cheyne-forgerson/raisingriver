@@ -30,23 +30,14 @@ console.log(itemPrice);
 
         //--shopping bag
 var shoppingBagCount = document.getElementById("shoppingBagCount");
-
 var itemCount = 0;
-
 var removeItemBtn = document.getElementsByClassName("remove-item");
-
 var removeItemInBag = document.getElementsByClassName("item-in-bag");
-
 var removePrice = document.getElementsByClassName("item-price-li");
-
 var navBag = document.getElementById("nav-bag");
-
 var totalItems = document.getElementById("total-items");
-
 var totalPrice = document.getElementById("total-price");
-
 var totalPriceHTML = 0;
-
 var clearBagBtn = document.querySelector("#shopping-bag-header-x");
 
             // --remove item
@@ -112,6 +103,25 @@ function toggleFullScreen() {
 
 
 // Lazy Load images
+document.addEventListener("DOMContentLoaded", function() {
+    const imageObserver = new IntersectionObserver((entries, imgObserver) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const lazyImage = entry.target
+                console.log("lazy loading ", lazyImage)
+                lazyImage.src = lazyImage.dataset.src
+                lazyImage.classList.remove("lzy_img");
+                imgObserver.unobserve(lazyImage);
+            }
+        })
+    });
+    const arr = document.querySelectorAll('img.lzy_img')
+    arr.forEach((v) => {
+        imageObserver.observe(v);
+    })
+})
+
+
 
 // document.addEventListener("DOMContentLoaded", function() {
 //   var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
@@ -275,7 +285,6 @@ function clearShoppingBag() {
 
  function shoppingArrayUpdate() {
 
-
    for (let i = 0, len = removeItemBtn.length | 0; i < len; i = i + 1 | 0) {
      var removeItemBtnCount = removeItemBtn[i];
      var removeItemInBagCount = removeItemInBag[i];
@@ -377,12 +386,10 @@ giveBtn.onclick = function giveBtnClick () {
 }
 
 contactBtn.onclick = function contactBtnClick () {
-  document.getElementById("main").className = "main";
   contactBtnImg.setAttribute("src", "images/4.png");
   contactPage.classList.remove("contact-off");
   contactPage.classList.add("contact-on");
   contactNav.className = "contact-nav-on";
-  setTimeout(navBtnClick, 0);
   setTimeout(function () {contactBtnImg.setAttribute("src", "images/contact.png");},750);
 }
 
@@ -393,7 +400,7 @@ var closeContactBtn = document.getElementById("close-contact-btn");
 closeContactBtn.onclick = () => {
   contactPage.className = "contact-off";
   contactNav.className = "contact-nav-off";
-  document.getElementById("main").className = "";
+  setTimeout(navBtnClick, 0);
   setTimeout(function (){
     homeIcon.className = "icon-home-on";
     bagIcon.className = "icon-bag-on";
@@ -414,26 +421,16 @@ var contactNavBars = document.getElementById("contact-nav-bars");
   contactPage.className = "contact-off";
   contactNav.className = "contact-nav-off";
   navbar.classList.remove("navbar-off");
-  setTimeout(navBtnClick, 0);
-  document.getElementById("titleS").className = "titleS-on";
-  document.getElementById("titleH").className = "titleH-on";
-  document.getElementById("titleO").className = "titleO-on";
-  document.getElementById("titleP").className = "titleP-on";
-  document.getElementById("titleUnderline").className = "titleUnderline-on";
-  document.getElementById("icon-home").className = "icon-home-on";
-  document.getElementById("nav-btn").className = "nav-btn-on";
-  document.getElementById("icon-bag").className = "icon-bag-on";
-  document.getElementById("shoppingBagCount").className = "shoppingBagCount-on";
-  document.getElementById("main").className = "";
 }
 
 // end contact nav
 
 
 // reusable functions
-function changeImg (element, source) {
-  element.setAttribute("src", source);
-}
+// function changeImg(element, source1) {
+//   element.setAttribute("src", source1);
+//   setTimeout(function() {element.setAttribute("src", source2)}, 500);
+// }
 
 // end reusable functions
 
@@ -471,20 +468,9 @@ var infoBtnImg = document.getElementById("info-btn-img");
   aboutBtn.onclick = () => {
     infoSection.className = "info-on";
     infoNav.className = "info-nav-on";
+    document.getElementById("main").className = "main";
     infoBtnImg.setAttribute("src", "images/12.png");
     setTimeout(function () {infoBtnImg.setAttribute("src", "images/13.png");},750);
-    setTimeout(navBtnClick, 500);
-    document.getElementById("titleS").className = "titleS-off";
-    document.getElementById("titleH").className = "titleH-off";
-    document.getElementById("titleO").className = "titleO-off";
-    document.getElementById("titleP").className = "titleP-off";
-    document.getElementById("titleUnderline").className = "titleUnderline-off";
-    document.getElementById("icon-home").className = "icon-home-off";
-    document.getElementById("nav-btn").className = "nav-btn-off";
-    document.getElementById("icon-bag").className = "icon-bag-off";
-    document.getElementById("shoppingBagCount").className = "shoppingBagCount-off";
-    setTimeout(function () {document.getElementById("main").className = "main";}, 500);
-
 }
 
   closeAboutBtn.onclick = () => {
@@ -682,79 +668,3 @@ var infoNavBars = document.getElementById("info-nav-bars");
   }
 
 // -------CONTACT-------
-
-
-
-// var timer = null;
-// window.addEventListener("scroll", function() {
-//     if(timer !== null) {
-//         clearTimeout(timer);
-//     }
-//     timer = setTimeout(function() {
-//         navbar.classList.remove("navbar-off");
-//     }, 2000);
-// }, false);
-
-// function scrollAbout(){
-//   aboutArrow.onclick = () => {
-//
-//
-//   }
-// }
-
-
-// SCROLL DIRECTION
-// var lastScrollTop = 0;
-// // element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
-// about.addEventListener("scroll", function(){ // or window.addEventListener("scroll"....
-//    var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
-//    if (st > lastScrollTop){
-//       // downscroll code
-//    } else {
-//       // upscroll code
-//    }
-//    lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
-// }, false);
-
-//-------END NAV-------
-
-
-
-//-------Reveal on Scroll-------
-/*
-var item1 = document.querySelector("#item1");
-window.addEventListener('scroll', function (item1Reveal) {
-	if (isInViewport(item1)) {
-    item1.className = "item1-on";
-  } else {
-    item1.className = "item1-off";
-  }
-}, false);
-
-var item2 = document.querySelector("#item2");
-window.addEventListener('scroll', function (item2Reveal) {
-	if (isInViewport(item2)) {
-    item2.className = "item2-on";
-  } else {
-    item2.className = "item2-off";
-  }
-}, false);
-
-var item3 = document.querySelector("#item3");
-window.addEventListener('scroll', function (item3Reveal) {
-	if (isInViewport(item3)) {
-    item3.className = "item3-on";
-  } else {
-    item3.className = "item3-off";
-  }
-}, false);
-
-var item4 = document.querySelector("#item4");
-window.addEventListener('scroll', function (item4Reveal) {
-	if (isInViewport(item4)) {
-    item4.className = "item4-on";
-  } else {
-    item4.className = "item4-off";
-  }
-}, false)
-*/
